@@ -134,10 +134,25 @@ code, pre { font-family: var(--font-code); }
   font-size: .9rem; font-weight: 600; font-family: var(--font-code);
 }
 .games-home__all:hover { text-decoration: underline; }
-.games-home__grid {
+.games-home__body { display: block; }
+
+.game-family {
+  margin: 0 0 1.4rem;
+}
+.game-family:last-child { margin-bottom: 0; }
+.game-family__label {
+  margin: 0 0 .5rem;
+  font-family: var(--font-code);
+  font-size: .78rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: var(--gold);
+  padding-bottom: .3rem;
+  border-bottom: 1px dashed var(--line);
+}
+.game-family__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
-  gap: .75rem;
+  gap: .6rem;
 }
 .game-card {
   display: block; padding: .9rem 1.05rem;

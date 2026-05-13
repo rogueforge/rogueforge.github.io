@@ -141,6 +141,8 @@ def discover_pages(docs_src: Path, groups: list) -> dict:
             continue
         found = {md_path.stem: md_path for md_path in gdir.glob("*.md")}
         order_hint = group.get("order", [])
+        if not order_hint and group.get("families"):
+            order_hint = [s for fam in group["families"] for s in fam.get("slugs", [])]
         ordered_slugs = []
         for slug in order_hint:
             if slug in found:
@@ -357,8 +359,10 @@ def main() -> int:
 
     home_output = output_dir / "index.html"
 
-    game_cards = []
-    for page in pages_by_group.get("games", []):
+    games_group = next((g for g in groups if g["slug"] == "games"), None)
+    games_pages_by_slug = {p["slug"]: p for p in pages_by_group.get("games", [])}
+
+    def render_game_card(page) -> str:
         ppath = output_dir / page["output_path"]
         href = relative_href(home_output, ppath)
         title = page_titles[("games", page["slug"])]
@@ -367,9 +371,9 @@ def main() -> int:
         status_html = ""
         if page_is_stub(md_text):
             status_html = '\n  <p class="game-card__status">In progress</p>'
-        game_cards.append(
+        return (
             '<a class="game-card" href="{href}">\n'
-            '  <h3 class="game-card__title">{title}</h3>\n'
+            '  <h4 class="game-card__title">{title}</h4>\n'
             '  <p class="game-card__lead">{lead}</p>{status}\n'
             '</a>'.format(
                 href=escape(href),
@@ -377,6 +381,28 @@ def main() -> int:
                 lead=escape(lead),
                 status=status_html,
             )
+        )
+
+    families = (games_group or {}).get("families") if games_group else None
+    if families:
+        family_blocks = []
+        for fam in families:
+            cards = [render_game_card(games_pages_by_slug[s])
+                     for s in fam["slugs"] if s in games_pages_by_slug]
+            if not cards:
+                continue
+            family_blocks.append(
+                '<section class="game-family">\n'
+                f'  <h3 class="game-family__label">{escape(fam["label"])}</h3>\n'
+                '  <div class="game-family__grid">\n'
+                + "\n".join(cards)
+                + '\n  </div>\n'
+                '</section>'
+            )
+        game_cards_html = "\n".join(family_blocks)
+    else:
+        game_cards_html = "\n".join(
+            render_game_card(p) for p in pages_by_group.get("games", [])
         )
 
     group_cards = []
@@ -409,7 +435,7 @@ def main() -> int:
             "logo_href": "assets/roguelogo.jpg",
             "games_href": "games/index.html",
             "games_count": str(len(pages_by_group.get("games", []))),
-            "game_cards": "\n".join(game_cards),
+            "game_cards": game_cards_html,
             "group_cards": "\n".join(group_cards),
             "readme_html": readme_html,
         },

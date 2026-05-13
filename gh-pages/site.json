@@ -8,21 +8,31 @@
       "slug": "games",
       "title": "The games",
       "summary": "Per-game pages: history, recovered binaries, source releases, restoration status, guides.",
-      "order": [
-        "rogue-3-4",
-        "rogue-3-6",
-        "rogue-4-22",
-        "rogue-5-2",
-        "rogue-5-3",
-        "rogue-5-4",
-        "rogomatic",
-        "advanced-rogue-1-0",
-        "advanced-rogue-5-8",
-        "advanced-rogue-5-8s",
-        "advanced-rogue-7-7",
-        "xrogue-8-0",
-        "ultrarogue-1-07",
-        "super-rogue-9-0"
+      "families": [
+        {
+          "label": "Rogue",
+          "slugs": ["rogue-3-4", "rogue-3-6", "rogue-4-22", "rogue-5-2", "rogue-5-3", "rogue-5-4"]
+        },
+        {
+          "label": "Rog-O-Matic",
+          "slugs": ["rogomatic"]
+        },
+        {
+          "label": "Advanced Rogue",
+          "slugs": ["advanced-rogue-1-0", "advanced-rogue-5-8", "advanced-rogue-5-8s", "advanced-rogue-7-7"]
+        },
+        {
+          "label": "XRogue",
+          "slugs": ["xrogue-8-0"]
+        },
+        {
+          "label": "Super-Rogue",
+          "slugs": ["super-rogue-9-0"]
+        },
+        {
+          "label": "UltraRogue",
+          "slugs": ["ultrarogue-1-07"]
+        }
       ]
     },
     {
