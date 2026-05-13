@@ -20,35 +20,30 @@
       </nav>
     </header>
 
+    <div class="breadcrumbs" aria-label="Breadcrumb">
+      You are here: <strong>Home</strong>
+    </div>
+
     <main id="main-content" class="home-layout" tabindex="-1">
-      <section class="hero">
-        <p class="eyebrow">Project hub</p>
-        <h1>{{ site_name }}</h1>
-        <p class="hero__tagline">{{ site_tagline }}</p>
-        <p class="hero__description">{{ site_description }}</p>
-      </section>
+      <aside class="home-sidebar" aria-label="Site sections">
+        <nav class="home-nav">
+{{ home_nav }}
+        </nav>
+      </aside>
 
-      <section class="games-home">
-        <div class="games-home__head">
-          <h2 class="games-home__heading">The games</h2>
-          <a class="games-home__all" href="{{ games_href }}">All {{ games_count }} versions &rarr;</a>
-        </div>
-        <div class="games-home__body">
-{{ game_cards }}
-        </div>
-      </section>
+      <article class="home-main">
+        <header class="home-main__header">
+          <p class="eyebrow">Welcome</p>
+          <h1>{{ site_name }}</h1>
+          <p class="home-main__tagline">{{ site_tagline }}</p>
+          <p class="home-main__description">{{ site_description }}</p>
+        </header>
 
-      <section class="groups">
-        <h2 class="groups__heading">Also on RogueForge</h2>
-        <div class="groups__grid">
-{{ group_cards }}
-        </div>
-      </section>
-
-      <section class="provenance">
-        <h2 class="provenance__heading">About this project</h2>
+        <section class="home-main__about">
+          <h2>About this project</h2>
 {{ readme_html }}
-      </section>
+        </section>
+      </article>
     </main>
 
     <footer class="site-footer">

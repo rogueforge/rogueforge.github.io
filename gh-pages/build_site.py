@@ -240,6 +240,79 @@ def build_docs_nav(groups, pages_by_group, page_titles, current_output,
     return "\n".join(chunks)
 
 
+def build_home_nav(groups: list, pages_by_group: dict, page_titles: dict,
+                   home_output: Path, output_dir: Path, github_href: str) -> str:
+    """Full sidebar nav for the home page - mirrors rogue.rogueforge.net.
+
+    Each top-level group becomes a heading; games gets family sub-headings;
+    the rest list pages flat. An extra "Development" group at the end links
+    out to the GitHub org.
+    """
+    chunks = []
+    for group in groups:
+        g_slug = group["slug"]
+        heading = escape(group["title"])
+        body_html = ""
+        if g_slug == "games" and group.get("families"):
+            page_index = {p["slug"]: p for p in pages_by_group.get(g_slug, [])}
+            family_blocks = []
+            for fam in group["families"]:
+                items = []
+                for slug in fam.get("slugs", []):
+                    if slug not in page_index:
+                        continue
+                    page = page_index[slug]
+                    href = relative_href(home_output, output_dir / page["output_path"])
+                    title = page_titles[(g_slug, slug)]
+                    items.append(
+                        f'    <li><a class="home-nav__item" href="{escape(href)}">'
+                        f'{escape(title)}</a></li>'
+                    )
+                if not items:
+                    continue
+                family_blocks.append(
+                    '  <div class="home-nav__family">\n'
+                    f'    <p class="home-nav__family-label">{escape(fam["label"])}</p>\n'
+                    '    <ul class="home-nav__list">\n'
+                    + "\n".join(items)
+                    + "\n    </ul>\n"
+                    '  </div>'
+                )
+            body_html = "\n".join(family_blocks)
+        else:
+            items = []
+            for page in pages_by_group.get(g_slug, []):
+                href = relative_href(home_output, output_dir / page["output_path"])
+                title = page_titles[(g_slug, page["slug"])]
+                items.append(
+                    f'    <li><a class="home-nav__item" href="{escape(href)}">'
+                    f'{escape(title)}</a></li>'
+                )
+            if items:
+                body_html = (
+                    '  <ul class="home-nav__list">\n'
+                    + "\n".join(items)
+                    + "\n  </ul>"
+                )
+        chunks.append(
+            '<div class="home-nav__group">\n'
+            f'  <h3 class="home-nav__heading">{heading}</h3>\n'
+            f'{body_html}\n'
+            '</div>'
+        )
+
+    chunks.append(
+        '<div class="home-nav__group">\n'
+        '  <h3 class="home-nav__heading">Development</h3>\n'
+        '  <ul class="home-nav__list">\n'
+        f'    <li><a class="home-nav__item" href="{escape(github_href)}">'
+        f'github.com/rogueforge</a></li>\n'
+        '  </ul>\n'
+        '</div>'
+    )
+    return "\n".join(chunks)
+
+
 def extract_lead(md_text: str, max_chars: int = 220) -> str:
     """First plain paragraph after the H1 - used for home-page game blurbs.
 
@@ -358,72 +431,10 @@ def main() -> int:
     write_text(output_dir / ".nojekyll", "")
 
     home_output = output_dir / "index.html"
-
-    games_group = next((g for g in groups if g["slug"] == "games"), None)
-    games_pages_by_slug = {p["slug"]: p for p in pages_by_group.get("games", [])}
-
-    def render_game_card(page) -> str:
-        ppath = output_dir / page["output_path"]
-        href = relative_href(home_output, ppath)
-        title = page_titles[("games", page["slug"])]
-        md_text = page["source"].read_text(encoding="utf-8")
-        lead = extract_lead(md_text)
-        status_html = ""
-        if page_is_stub(md_text):
-            status_html = '\n  <p class="game-card__status">In progress</p>'
-        return (
-            '<a class="game-card" href="{href}">\n'
-            '  <h4 class="game-card__title">{title}</h4>\n'
-            '  <p class="game-card__lead">{lead}</p>{status}\n'
-            '</a>'.format(
-                href=escape(href),
-                title=escape(title),
-                lead=escape(lead),
-                status=status_html,
-            )
-        )
-
-    families = (games_group or {}).get("families") if games_group else None
-    if families:
-        family_blocks = []
-        for fam in families:
-            cards = [render_game_card(games_pages_by_slug[s])
-                     for s in fam["slugs"] if s in games_pages_by_slug]
-            if not cards:
-                continue
-            family_blocks.append(
-                '<section class="game-family">\n'
-                f'  <h3 class="game-family__label">{escape(fam["label"])}</h3>\n'
-                '  <div class="game-family__grid">\n'
-                + "\n".join(cards)
-                + '\n  </div>\n'
-                '</section>'
-            )
-        game_cards_html = "\n".join(family_blocks)
-    else:
-        game_cards_html = "\n".join(
-            render_game_card(p) for p in pages_by_group.get("games", [])
-        )
-
-    group_cards = []
-    for group in groups:
-        if group["slug"] == "games":
-            continue
-        count = len(pages_by_group.get(group["slug"], []))
-        gpath = output_dir / group["slug"] / "index.html"
-        href = relative_href(home_output, gpath)
-        group_cards.append(
-            '<a class="group-card" href="{href}">\n'
-            '  <h3 class="group-card__title">{title}</h3>\n'
-            '  <p class="group-card__summary">{summary}</p>\n'
-            '  <p class="group-card__meta">{count} page{plural}</p>\n'
-            '</a>'.format(
-                href=escape(href),
-                title=escape(group["title"]),
-                summary=escape(group["summary"]),
-                count=count, plural=("s" if count != 1 else ""),
-            )
-        )
+    home_nav_html = build_home_nav(
+        groups, pages_by_group, page_titles,
+        home_output, output_dir, github_href,
+    )
     home_html = render_template(
         SOURCE_DIR / "templates" / "home.html",
         {
@@ -433,10 +444,7 @@ def main() -> int:
             "github_href": escape(github_href),
             "assets_href": "assets/site.css",
             "logo_href": "assets/roguelogo.jpg",
-            "games_href": "games/index.html",
-            "games_count": str(len(pages_by_group.get("games", []))),
-            "game_cards": game_cards_html,
-            "group_cards": "\n".join(group_cards),
+            "home_nav": home_nav_html,
             "readme_html": readme_html,
         },
     )
