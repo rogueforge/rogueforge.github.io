@@ -117,6 +117,54 @@ code, pre { font-family: var(--font-code); }
   max-width: 50rem; margin: 0; color: #b5a98e; font-size: .98rem;
 }
 
+/* --- home: the games grid (headliner) --- */
+.games-home {
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 4vw, 3rem);
+  border-bottom: 1px solid var(--line);
+}
+.games-home__head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap; margin: 0 0 1.2rem;
+}
+.games-home__heading {
+  margin: 0; font-family: var(--font-display); font-size: 1.6rem;
+}
+.games-home__all {
+  color: var(--accent-strong); text-decoration: none;
+  font-size: .9rem; font-weight: 600; font-family: var(--font-code);
+}
+.games-home__all:hover { text-decoration: underline; }
+.games-home__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: .75rem;
+}
+.game-card {
+  display: block; padding: .9rem 1.05rem;
+  background: var(--paper); border: 1px solid var(--line);
+  text-decoration: none; color: inherit;
+  transition: border-color .12s, transform .12s, box-shadow .12s;
+  position: relative;
+}
+.game-card:hover {
+  border-color: var(--accent); transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(40, 30, 15, .08);
+}
+.game-card__title {
+  margin: 0 0 .25rem; font-family: var(--font-display);
+  font-size: 1.1rem; color: var(--accent-strong); line-height: 1.2;
+}
+.game-card__lead {
+  margin: 0; color: var(--ink-soft); font-size: .85rem; line-height: 1.4;
+}
+.game-card__status {
+  position: absolute; top: .55rem; right: .7rem; margin: 0;
+  font-family: var(--font-code); font-size: .65rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* --- home: secondary sections --- */
 .groups {
   padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 4vw, 3rem);
   border-bottom: 1px solid var(--line);

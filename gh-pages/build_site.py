@@ -139,14 +139,25 @@ def discover_pages(docs_src: Path, groups: list) -> dict:
         if not gdir.is_dir():
             by_group[group["slug"]] = []
             continue
-        pages = []
-        for md_path in sorted(gdir.glob("*.md")):
-            slug = md_path.stem
-            pages.append({
-                "slug": slug,
-                "source": md_path,
-                "output_path": Path(group["slug"]) / slug / "index.html",
-            })
+        found = {md_path.stem: md_path for md_path in gdir.glob("*.md")}
+        order_hint = group.get("order", [])
+        ordered_slugs = []
+        for slug in order_hint:
+            if slug in found:
+                ordered_slugs.append(slug)
+            else:
+                print(f"warning: site.json lists docs/{group['slug']}/{slug}.md but file is missing",
+                      file=sys.stderr)
+        leftover = sorted(s for s in found if s not in set(order_hint))
+        if order_hint and leftover:
+            print(f"warning: docs/{group['slug']}/ contains pages not in site.json order: {leftover}",
+                  file=sys.stderr)
+        ordered_slugs.extend(leftover)
+        pages = [{
+            "slug": slug,
+            "source": found[slug],
+            "output_path": Path(group["slug"]) / slug / "index.html",
+        } for slug in ordered_slugs]
         by_group[group["slug"]] = pages
     for child in docs_src.iterdir():
         if child.is_dir() and child.name not in group_slugs and not child.name.startswith("."):
@@ -227,6 +238,46 @@ def build_docs_nav(groups, pages_by_group, page_titles, current_output,
     return "\n".join(chunks)
 
 
+def extract_lead(md_text: str, max_chars: int = 220) -> str:
+    """First plain paragraph after the H1 - used for home-page game blurbs.
+
+    Skips blank lines, HTML callouts, headings, and code fences. Returns
+    plain text (markdown emphasis stripped), truncated at max_chars on a
+    word boundary.
+    """
+    lines = md_text.splitlines()
+    i = 0
+    while i < len(lines) and lines[i].strip().startswith("# "):
+        i += 1
+    while i < len(lines):
+        line = lines[i].strip()
+        if not line:
+            i += 1; continue
+        if line.startswith(("#", "<", "```", ">", "-", "*", "1.")):
+            i += 1; continue
+        para_lines = [line]
+        i += 1
+        while i < len(lines) and lines[i].strip() and not lines[i].lstrip().startswith(("#", "<")):
+            para_lines.append(lines[i].strip())
+            i += 1
+        text = " ".join(para_lines)
+        text = re.sub(r"\*\*(.+?)\*\*", r"\1", text)
+        text = re.sub(r"\*(.+?)\*", r"\1", text)
+        text = re.sub(r"\[(.+?)\]\([^)]+\)", r"\1", text)
+        text = re.sub(r"`([^`]+)`", r"\1", text)
+        text = re.sub(r"\s+", " ", text).strip()
+        if len(text) > max_chars:
+            cut = text.rfind(" ", 0, max_chars)
+            if cut > 0:
+                text = text[:cut].rstrip(",;.: ") + "..."
+        return text
+    return ""
+
+
+def page_is_stub(md_text: str) -> bool:
+    return '<div class="callout">' in md_text and "Placeholder" in md_text
+
+
 def build_toc(entries: list) -> str:
     if not entries:
         return ""
@@ -305,8 +356,33 @@ def main() -> int:
     write_text(output_dir / ".nojekyll", "")
 
     home_output = output_dir / "index.html"
+
+    game_cards = []
+    for page in pages_by_group.get("games", []):
+        ppath = output_dir / page["output_path"]
+        href = relative_href(home_output, ppath)
+        title = page_titles[("games", page["slug"])]
+        md_text = page["source"].read_text(encoding="utf-8")
+        lead = extract_lead(md_text)
+        status_html = ""
+        if page_is_stub(md_text):
+            status_html = '\n  <p class="game-card__status">In progress</p>'
+        game_cards.append(
+            '<a class="game-card" href="{href}">\n'
+            '  <h3 class="game-card__title">{title}</h3>\n'
+            '  <p class="game-card__lead">{lead}</p>{status}\n'
+            '</a>'.format(
+                href=escape(href),
+                title=escape(title),
+                lead=escape(lead),
+                status=status_html,
+            )
+        )
+
     group_cards = []
     for group in groups:
+        if group["slug"] == "games":
+            continue
         count = len(pages_by_group.get(group["slug"], []))
         gpath = output_dir / group["slug"] / "index.html"
         href = relative_href(home_output, gpath)
@@ -331,6 +407,9 @@ def main() -> int:
             "github_href": escape(github_href),
             "assets_href": "assets/site.css",
             "logo_href": "assets/roguelogo.jpg",
+            "games_href": "games/index.html",
+            "games_count": str(len(pages_by_group.get("games", []))),
+            "game_cards": "\n".join(game_cards),
             "group_cards": "\n".join(group_cards),
             "readme_html": readme_html,
         },

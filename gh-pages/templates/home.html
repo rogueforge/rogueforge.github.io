@@ -28,8 +28,18 @@
         <p class="hero__description">{{ site_description }}</p>
       </section>
 
+      <section class="games-home">
+        <div class="games-home__head">
+          <h2 class="games-home__heading">The games</h2>
+          <a class="games-home__all" href="{{ games_href }}">All {{ games_count }} versions &rarr;</a>
+        </div>
+        <div class="games-home__grid">
+{{ game_cards }}
+        </div>
+      </section>
+
       <section class="groups">
-        <h2 class="groups__heading">Sections</h2>
+        <h2 class="groups__heading">Also on RogueForge</h2>
         <div class="groups__grid">
 {{ group_cards }}
         </div>
