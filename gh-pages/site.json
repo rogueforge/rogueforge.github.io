@@ -1,0 +1,28 @@
+{
+  "site_name": "RogueForge",
+  "site_tagline": "The Roguelike Restoration Project",
+  "site_description": "The umbrella home for restoring and maintaining classic Rogue and its direct descendants — BSD Rogue 3.x, 4.x, 5.x, Advanced Rogue, Super-Rogue, UltraRogue, XRogue, Rog-O-Matic, and friends. Source archaeology, recovered binaries, modern ports, and documentation.",
+  "github_href": "https://github.com/rogueforge",
+  "groups": [
+    {
+      "slug": "games",
+      "title": "The games",
+      "summary": "Per-game pages: history, recovered binaries, source releases, restoration status, guides."
+    },
+    {
+      "slug": "docs",
+      "title": "Documentation",
+      "summary": "Yendor's Guide, the Vade-Mecum, manual pages, internals."
+    },
+    {
+      "slug": "history",
+      "title": "History & provenance",
+      "summary": "Where each version was rescued from — BSD CSRG distributions, FTP archives, personal mailings, the SourceForge era."
+    },
+    {
+      "slug": "about",
+      "title": "About",
+      "summary": "Project goals, the move from RogueForge.net and SourceForge to GitHub, contact, license."
+    }
+  ]
+}
