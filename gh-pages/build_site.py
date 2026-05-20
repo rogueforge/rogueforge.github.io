@@ -196,7 +196,20 @@ def make_link_rewriter(current_group: str, current_slug: str):
 
 
 def build_docs_nav(groups, pages_by_group, page_titles, current_output,
-                   output_dir, current_group, current_slug) -> str:
+                   output_dir, current_group, current_slug, github_href) -> str:
+
+    def render_item(page, g_slug):
+        page_output = output_dir / page["output_path"]
+        page_href = relative_href(current_output, page_output)
+        classes = "docs-nav__item"
+        if g_slug == current_group and page["slug"] == current_slug:
+            classes += " is-active"
+        title = page_titles.get((g_slug, page["slug"]), page["slug"])
+        return (
+            f'    <li><a class="{classes}" href="{escape(page_href)}">'
+            f'{escape(title)}</a></li>'
+        )
+
     chunks = []
     for group in groups:
         g_slug = group["slug"]
@@ -206,30 +219,41 @@ def build_docs_nav(groups, pages_by_group, page_titles, current_output,
             title_classes += " is-active"
         group_index = output_dir / g_slug / "index.html"
         href = relative_href(current_output, group_index)
-        items = []
-        for page in pages_by_group.get(g_slug, []):
-            page_output = output_dir / page["output_path"]
-            page_href = relative_href(current_output, page_output)
-            classes = "docs-nav__item"
-            if is_current_group and page["slug"] == current_slug:
-                classes += " is-active"
-            title = page_titles.get((g_slug, page["slug"]), page["slug"])
-            items.append(
-                f'    <li><a class="{classes}" href="{escape(page_href)}">'
-                f'{escape(title)}</a></li>'
-            )
-        if is_current_group and items:
-            list_html = (
-                '\n  <ul class="docs-nav__list">\n'
-                + "\n".join(items)
-                + "\n  </ul>"
-            )
+
+        list_html = ""
+        if is_current_group and group.get("families"):
+            page_index = {p["slug"]: p for p in pages_by_group.get(g_slug, [])}
+            family_blocks = []
+            for fam in group["families"]:
+                fam_items = [render_item(page_index[s], g_slug)
+                             for s in fam.get("slugs", []) if s in page_index]
+                if not fam_items:
+                    continue
+                family_blocks.append(
+                    '  <div class="docs-nav__family">\n'
+                    f'    <p class="docs-nav__family-label">{escape(fam["label"])}</p>\n'
+                    '    <ul class="docs-nav__list">\n'
+                    + "\n".join(fam_items)
+                    + "\n    </ul>\n"
+                    '  </div>'
+                )
+            if family_blocks:
+                list_html = "\n" + "\n".join(family_blocks)
+        elif is_current_group:
+            items = [render_item(p, g_slug) for p in pages_by_group.get(g_slug, [])]
+            if items:
+                list_html = (
+                    '\n  <ul class="docs-nav__list">\n'
+                    + "\n".join(items)
+                    + "\n  </ul>"
+                )
         else:
             count = len(pages_by_group.get(g_slug, []))
             list_html = (
                 f'\n  <p class="docs-nav__count">{count} page'
                 f'{"s" if count != 1 else ""}</p>'
             )
+
         chunks.append(
             f'<div class="docs-nav__group">\n'
             f'  <a class="{title_classes}" href="{escape(href)}">'
@@ -237,6 +261,16 @@ def build_docs_nav(groups, pages_by_group, page_titles, current_output,
             f'{list_html}\n'
             f'</div>'
         )
+
+    chunks.append(
+        '<div class="docs-nav__group">\n'
+        '  <span class="docs-nav__group-title">Development</span>\n'
+        '  <ul class="docs-nav__list">\n'
+        f'    <li><a class="docs-nav__item" href="{escape(github_href)}">'
+        f'github.com/rogueforge</a></li>\n'
+        '  </ul>\n'
+        '</div>'
+    )
     return "\n".join(chunks)
 
 
@@ -493,7 +527,7 @@ def main() -> int:
             nav_html = build_docs_nav(
                 groups, pages_by_group, page_titles,
                 page_output, output_dir,
-                g_slug, page["slug"],
+                g_slug, page["slug"], github_href,
             )
             toc_html = build_toc(rendered["toc"])
             assets_href = relative_href(page_output, output_dir / "assets" / "site.css")
