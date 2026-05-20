@@ -195,78 +195,85 @@ def make_link_rewriter(current_group: str, current_slug: str):
     return rewrite
 
 
-def build_docs_nav(groups, pages_by_group, page_titles, current_output,
-                   output_dir, current_group, current_slug, github_href) -> str:
+def build_nav(groups, pages_by_group, page_titles, current_output,
+              output_dir, github_href, current_group=None, current_slug=None) -> str:
+    """Full sidebar nav shared by the home page and every doc page.
 
-    def render_item(page, g_slug):
-        page_output = output_dir / page["output_path"]
-        page_href = relative_href(current_output, page_output)
-        classes = "docs-nav__item"
-        if g_slug == current_group and page["slug"] == current_slug:
-            classes += " is-active"
+    Mirrors rogue.rogueforge.net: every section is always fully expanded
+    (the games group split into its family sub-lists), the current page —
+    if any — gets an is-active highlight, and a trailing "Development"
+    group links out to the GitHub org.
+
+    A group may declare a "links" array in site.json for non-page entries
+    (e.g. About's "Home" link to the site root). Each link is either
+    {"label", "to": <path under output root>} or {"label", "url": <abs>}.
+    """
+    def item(href, label, active=False):
+        cls = "nav__item is-active" if active else "nav__item"
+        return (f'    <li><a class="{cls}" href="{escape(href)}">'
+                f'{escape(label)}</a></li>')
+
+    def page_item(page, g_slug):
+        href = relative_href(current_output, output_dir / page["output_path"])
+        active = (g_slug == current_group and page["slug"] == current_slug)
         title = page_titles.get((g_slug, page["slug"]), page["slug"])
-        return (
-            f'    <li><a class="{classes}" href="{escape(page_href)}">'
-            f'{escape(title)}</a></li>'
-        )
+        return item(href, title, active)
 
     chunks = []
     for group in groups:
         g_slug = group["slug"]
-        is_current_group = (g_slug == current_group)
-        title_classes = "docs-nav__group-title"
-        if is_current_group:
-            title_classes += " is-active"
-        group_index = output_dir / g_slug / "index.html"
-        href = relative_href(current_output, group_index)
+        body_parts = []
 
-        list_html = ""
-        if is_current_group and group.get("families"):
+        link_items = []
+        for link in group.get("links", []):
+            if "url" in link:
+                link_items.append(item(link["url"], link["label"]))
+            else:
+                target = output_dir / (link.get("to") or "index.html")
+                href = relative_href(current_output, target)
+                active = (current_group is None
+                          and target.resolve() == current_output.resolve())
+                link_items.append(item(href, link["label"], active))
+        if link_items:
+            body_parts.append('  <ul class="nav__list">\n'
+                              + "\n".join(link_items) + "\n  </ul>")
+
+        if group.get("families"):
             page_index = {p["slug"]: p for p in pages_by_group.get(g_slug, [])}
-            family_blocks = []
             for fam in group["families"]:
-                fam_items = [render_item(page_index[s], g_slug)
+                fam_items = [page_item(page_index[s], g_slug)
                              for s in fam.get("slugs", []) if s in page_index]
                 if not fam_items:
                     continue
-                family_blocks.append(
-                    '  <div class="docs-nav__family">\n'
-                    f'    <p class="docs-nav__family-label">{escape(fam["label"])}</p>\n'
-                    '    <ul class="docs-nav__list">\n'
+                body_parts.append(
+                    '  <div class="nav__family">\n'
+                    f'    <p class="nav__family-label">{escape(fam["label"])}</p>\n'
+                    '    <ul class="nav__list">\n'
                     + "\n".join(fam_items)
                     + "\n    </ul>\n"
                     '  </div>'
                 )
-            if family_blocks:
-                list_html = "\n" + "\n".join(family_blocks)
-        elif is_current_group:
-            items = [render_item(p, g_slug) for p in pages_by_group.get(g_slug, [])]
-            if items:
-                list_html = (
-                    '\n  <ul class="docs-nav__list">\n'
-                    + "\n".join(items)
-                    + "\n  </ul>"
-                )
         else:
-            count = len(pages_by_group.get(g_slug, []))
-            list_html = (
-                f'\n  <p class="docs-nav__count">{count} page'
-                f'{"s" if count != 1 else ""}</p>'
-            )
+            items = [page_item(p, g_slug) for p in pages_by_group.get(g_slug, [])]
+            if items:
+                body_parts.append('  <ul class="nav__list">\n'
+                                  + "\n".join(items) + "\n  </ul>")
 
+        group_index = output_dir / g_slug / "index.html"
+        heading_href = relative_href(current_output, group_index)
         chunks.append(
-            f'<div class="docs-nav__group">\n'
-            f'  <a class="{title_classes}" href="{escape(href)}">'
-            f'{escape(group["title"])}</a>'
-            f'{list_html}\n'
-            f'</div>'
+            '<div class="nav__group">\n'
+            f'  <a class="nav__heading" href="{escape(heading_href)}">'
+            f'{escape(group["title"])}</a>\n'
+            + "\n".join(body_parts)
+            + '\n</div>'
         )
 
     chunks.append(
-        '<div class="docs-nav__group">\n'
-        '  <span class="docs-nav__group-title">Development</span>\n'
-        '  <ul class="docs-nav__list">\n'
-        f'    <li><a class="docs-nav__item" href="{escape(github_href)}">'
+        '<div class="nav__group">\n'
+        '  <span class="nav__heading nav__heading--static">Development</span>\n'
+        '  <ul class="nav__list">\n'
+        f'    <li><a class="nav__item" href="{escape(github_href)}">'
         f'github.com/rogueforge</a></li>\n'
         '  </ul>\n'
         '</div>'
@@ -274,117 +281,17 @@ def build_docs_nav(groups, pages_by_group, page_titles, current_output,
     return "\n".join(chunks)
 
 
-def build_home_nav(groups: list, pages_by_group: dict, page_titles: dict,
-                   home_output: Path, output_dir: Path, github_href: str) -> str:
-    """Full sidebar nav for the home page - mirrors rogue.rogueforge.net.
-
-    Each top-level group becomes a heading; games gets family sub-headings;
-    the rest list pages flat. An extra "Development" group at the end links
-    out to the GitHub org.
-    """
-    chunks = []
-    for group in groups:
-        g_slug = group["slug"]
-        heading = escape(group["title"])
-        body_html = ""
-        if g_slug == "games" and group.get("families"):
-            page_index = {p["slug"]: p for p in pages_by_group.get(g_slug, [])}
-            family_blocks = []
-            for fam in group["families"]:
-                items = []
-                for slug in fam.get("slugs", []):
-                    if slug not in page_index:
-                        continue
-                    page = page_index[slug]
-                    href = relative_href(home_output, output_dir / page["output_path"])
-                    title = page_titles[(g_slug, slug)]
-                    items.append(
-                        f'    <li><a class="home-nav__item" href="{escape(href)}">'
-                        f'{escape(title)}</a></li>'
-                    )
-                if not items:
-                    continue
-                family_blocks.append(
-                    '  <div class="home-nav__family">\n'
-                    f'    <p class="home-nav__family-label">{escape(fam["label"])}</p>\n'
-                    '    <ul class="home-nav__list">\n'
-                    + "\n".join(items)
-                    + "\n    </ul>\n"
-                    '  </div>'
-                )
-            body_html = "\n".join(family_blocks)
+def build_breadcrumb(crumbs: list) -> str:
+    """crumbs: list of (label, href-or-None). The last is rendered as the
+    current page (bold, no link)."""
+    parts = []
+    for i, (label, href) in enumerate(crumbs):
+        last = (i == len(crumbs) - 1)
+        if last or href is None:
+            parts.append(f"<strong>{escape(label)}</strong>")
         else:
-            items = []
-            for page in pages_by_group.get(g_slug, []):
-                href = relative_href(home_output, output_dir / page["output_path"])
-                title = page_titles[(g_slug, page["slug"])]
-                items.append(
-                    f'    <li><a class="home-nav__item" href="{escape(href)}">'
-                    f'{escape(title)}</a></li>'
-                )
-            if items:
-                body_html = (
-                    '  <ul class="home-nav__list">\n'
-                    + "\n".join(items)
-                    + "\n  </ul>"
-                )
-        chunks.append(
-            '<div class="home-nav__group">\n'
-            f'  <h3 class="home-nav__heading">{heading}</h3>\n'
-            f'{body_html}\n'
-            '</div>'
-        )
-
-    chunks.append(
-        '<div class="home-nav__group">\n'
-        '  <h3 class="home-nav__heading">Development</h3>\n'
-        '  <ul class="home-nav__list">\n'
-        f'    <li><a class="home-nav__item" href="{escape(github_href)}">'
-        f'github.com/rogueforge</a></li>\n'
-        '  </ul>\n'
-        '</div>'
-    )
-    return "\n".join(chunks)
-
-
-def extract_lead(md_text: str, max_chars: int = 220) -> str:
-    """First plain paragraph after the H1 - used for home-page game blurbs.
-
-    Skips blank lines, HTML callouts, headings, and code fences. Returns
-    plain text (markdown emphasis stripped), truncated at max_chars on a
-    word boundary.
-    """
-    lines = md_text.splitlines()
-    i = 0
-    while i < len(lines) and lines[i].strip().startswith("# "):
-        i += 1
-    while i < len(lines):
-        line = lines[i].strip()
-        if not line:
-            i += 1; continue
-        if line.startswith(("#", "<", "```", ">", "-", "*", "1.")):
-            i += 1; continue
-        para_lines = [line]
-        i += 1
-        while i < len(lines) and lines[i].strip() and not lines[i].lstrip().startswith(("#", "<")):
-            para_lines.append(lines[i].strip())
-            i += 1
-        text = " ".join(para_lines)
-        text = re.sub(r"\*\*(.+?)\*\*", r"\1", text)
-        text = re.sub(r"\*(.+?)\*", r"\1", text)
-        text = re.sub(r"\[(.+?)\]\([^)]+\)", r"\1", text)
-        text = re.sub(r"`([^`]+)`", r"\1", text)
-        text = re.sub(r"\s+", " ", text).strip()
-        if len(text) > max_chars:
-            cut = text.rfind(" ", 0, max_chars)
-            if cut > 0:
-                text = text[:cut].rstrip(",;.: ") + "..."
-        return text
-    return ""
-
-
-def page_is_stub(md_text: str) -> bool:
-    return '<div class="callout">' in md_text and "Placeholder" in md_text
+            parts.append(f'<a href="{escape(href)}">{escape(label)}</a>')
+    return "You are here: " + " &raquo; ".join(parts)
 
 
 def build_toc(entries: list) -> str:
@@ -465,7 +372,7 @@ def main() -> int:
     write_text(output_dir / ".nojekyll", "")
 
     home_output = output_dir / "index.html"
-    home_nav_html = build_home_nav(
+    home_nav_html = build_nav(
         groups, pages_by_group, page_titles,
         home_output, output_dir, github_href,
     )
@@ -478,7 +385,9 @@ def main() -> int:
             "github_href": escape(github_href),
             "assets_href": "assets/site.css",
             "logo_href": "assets/roguelogo.jpg",
-            "home_nav": home_nav_html,
+            "home_href": ".",
+            "breadcrumb": build_breadcrumb([("Home", None)]),
+            "nav": home_nav_html,
             "readme_html": readme_html,
         },
     )
@@ -503,6 +412,16 @@ def main() -> int:
                     slug=escape(page["slug"]),
                 )
             )
+        nav_html = build_nav(
+            groups, pages_by_group, page_titles,
+            group_output, output_dir, github_href,
+            current_group=g_slug,
+        )
+        home_href = relative_href(group_output, output_dir / "index.html")
+        breadcrumb = build_breadcrumb([
+            ("Home", home_href),
+            (group["title"], None),
+        ])
         group_html = render_template(
             SOURCE_DIR / "templates" / "group.html",
             {
@@ -511,7 +430,10 @@ def main() -> int:
                 "group_summary": escape(group["summary"]),
                 "github_href": escape(github_href),
                 "assets_href": relative_href(group_output, output_dir / "assets" / "site.css"),
-                "home_href": relative_href(group_output, output_dir / "index.html"),
+                "logo_href": relative_href(group_output, output_dir / "assets" / "roguelogo.jpg"),
+                "home_href": home_href,
+                "breadcrumb": breadcrumb,
+                "nav": nav_html,
                 "page_count": str(len(pages_by_group.get(g_slug, []))),
                 "page_list": "\n".join(page_items),
             },
@@ -524,15 +446,21 @@ def main() -> int:
             page_output = output_dir / page["output_path"]
             rendered = rendered_pages[(g_slug, page["slug"])]
             title = page_titles[(g_slug, page["slug"])]
-            nav_html = build_docs_nav(
+            nav_html = build_nav(
                 groups, pages_by_group, page_titles,
-                page_output, output_dir,
-                g_slug, page["slug"], github_href,
+                page_output, output_dir, github_href,
+                current_group=g_slug, current_slug=page["slug"],
             )
             toc_html = build_toc(rendered["toc"])
             assets_href = relative_href(page_output, output_dir / "assets" / "site.css")
+            logo_href = relative_href(page_output, output_dir / "assets" / "roguelogo.jpg")
             home_href = relative_href(page_output, output_dir / "index.html")
             group_href = relative_href(page_output, output_dir / g_slug / "index.html")
+            breadcrumb = build_breadcrumb([
+                ("Home", home_href),
+                (group["title"], group_href),
+                (title, None),
+            ])
             source_path = f"docs/{g_slug}/{page['slug']}.md"
             doc_html = render_template(
                 SOURCE_DIR / "templates" / "doc.html",
@@ -544,9 +472,11 @@ def main() -> int:
                     "group_href": escape(group_href),
                     "github_href": escape(github_href),
                     "assets_href": escape(assets_href),
+                    "logo_href": escape(logo_href),
                     "home_href": escape(home_href),
+                    "breadcrumb": breadcrumb,
                     "source_path": escape(source_path),
-                    "docs_nav": nav_html,
+                    "nav": nav_html,
                     "toc": toc_html,
                     "content": str(rendered["html"]),
                 },

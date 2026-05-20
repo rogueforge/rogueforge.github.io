@@ -5,6 +5,14 @@
   "github_href": "https://github.com/rogueforge",
   "groups": [
     {
+      "slug": "about",
+      "title": "About",
+      "summary": "Project goals, the move from RogueForge.net and SourceForge to GitHub, contact, license.",
+      "links": [
+        { "label": "Home", "to": "" }
+      ]
+    },
+    {
       "slug": "games",
       "title": "The games",
       "summary": "Per-game pages: history, recovered binaries, source releases, restoration status, guides.",
@@ -44,11 +52,6 @@
       "slug": "history",
       "title": "History & provenance",
       "summary": "Where each version was rescued from — BSD CSRG distributions, FTP archives, personal mailings, the SourceForge era."
-    },
-    {
-      "slug": "about",
-      "title": "About",
-      "summary": "Project goals, the move from RogueForge.net and SourceForge to GitHub, contact, license."
     }
   ]
 }

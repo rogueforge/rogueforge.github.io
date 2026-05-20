@@ -11,7 +11,7 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="page-shell">
     <header class="site-header">
-      <a class="brand" href=".">
+      <a class="brand" href="{{ home_href }}">
         <img class="brand__logo" src="{{ logo_href }}" alt="" aria-hidden="true">
         <span class="brand__name">{{ site_name }}</span>
       </a>
@@ -20,26 +20,24 @@
       </nav>
     </header>
 
-    <div class="breadcrumbs" aria-label="Breadcrumb">
-      You are here: <strong>Home</strong>
-    </div>
+    <div class="breadcrumbs" aria-label="Breadcrumb">{{ breadcrumb }}</div>
 
-    <main id="main-content" class="home-layout" tabindex="-1">
-      <aside class="home-sidebar" aria-label="Site sections">
-        <nav class="home-nav">
-{{ home_nav }}
+    <main id="main-content" class="layout" tabindex="-1">
+      <aside class="aside" aria-label="Site navigation">
+        <nav class="nav">
+{{ nav }}
         </nav>
       </aside>
 
-      <article class="home-main">
-        <header class="home-main__header">
+      <article class="content">
+        <header class="content__header">
           <p class="eyebrow">Welcome</p>
           <h1>{{ site_name }}</h1>
-          <p class="home-main__tagline">{{ site_tagline }}</p>
-          <p class="home-main__description">{{ site_description }}</p>
+          <p class="content__tagline">{{ site_tagline }}</p>
+          <p class="content__description">{{ site_description }}</p>
         </header>
 
-        <section class="home-main__about">
+        <section class="content__about">
           <h2>About this project</h2>
 {{ readme_html }}
         </section>

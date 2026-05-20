@@ -10,27 +10,36 @@
 <body class="site-group">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="page-shell">
-    <header class="site-header site-header--compact">
+    <header class="site-header">
       <a class="brand" href="{{ home_href }}">
+        <img class="brand__logo" src="{{ logo_href }}" alt="" aria-hidden="true">
         <span class="brand__name">{{ site_name }}</span>
       </a>
       <nav class="top-nav" aria-label="Primary">
         <a href="{{ github_href }}">GitHub</a>
-        <a href="{{ home_href }}">Home</a>
       </nav>
     </header>
 
-    <main id="main-content" class="group-layout" tabindex="-1">
-      <header class="group-header">
-        <p class="eyebrow">Section</p>
-        <h1>{{ group_title }}</h1>
-        <p class="group-header__summary">{{ group_summary }}</p>
-        <p class="group-header__count">{{ page_count }} pages</p>
-      </header>
+    <div class="breadcrumbs" aria-label="Breadcrumb">{{ breadcrumb }}</div>
 
-      <ul class="group-pages">
+    <main id="main-content" class="layout" tabindex="-1">
+      <aside class="aside" aria-label="Site navigation">
+        <nav class="nav">
+{{ nav }}
+        </nav>
+      </aside>
+
+      <article class="content">
+        <header class="content__header">
+          <p class="eyebrow">Section</p>
+          <h1>{{ group_title }}</h1>
+          <p class="content__description">{{ group_summary }}</p>
+        </header>
+
+        <ul class="group-pages">
 {{ page_list }}
-      </ul>
+        </ul>
+      </article>
     </main>
 
     <footer class="site-footer">
