@@ -384,7 +384,7 @@ def main() -> int:
             "site_description": escape(site_description),
             "github_href": escape(github_href),
             "assets_href": "assets/site.css",
-            "logo_href": "assets/roguelogo.jpg",
+            "logo_href": "assets/rogue-icon.png",
             "home_href": ".",
             "breadcrumb": build_breadcrumb([("Home", None)]),
             "nav": home_nav_html,
@@ -430,7 +430,7 @@ def main() -> int:
                 "group_summary": escape(group["summary"]),
                 "github_href": escape(github_href),
                 "assets_href": relative_href(group_output, output_dir / "assets" / "site.css"),
-                "logo_href": relative_href(group_output, output_dir / "assets" / "roguelogo.jpg"),
+                "logo_href": relative_href(group_output, output_dir / "assets" / "rogue-icon.png"),
                 "home_href": home_href,
                 "breadcrumb": breadcrumb,
                 "nav": nav_html,
@@ -453,7 +453,7 @@ def main() -> int:
             )
             toc_html = build_toc(rendered["toc"])
             assets_href = relative_href(page_output, output_dir / "assets" / "site.css")
-            logo_href = relative_href(page_output, output_dir / "assets" / "roguelogo.jpg")
+            logo_href = relative_href(page_output, output_dir / "assets" / "rogue-icon.png")
             home_href = relative_href(page_output, output_dir / "index.html")
             group_href = relative_href(page_output, output_dir / g_slug / "index.html")
             breadcrumb = build_breadcrumb([
