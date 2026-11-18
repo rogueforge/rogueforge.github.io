@@ -1,57 +1,709 @@
 {
   "site_name": "RogueForge",
-  "site_tagline": "The Roguelike Restoration Project",
-  "site_description": "The umbrella home for restoring and maintaining classic Rogue and its direct descendants — BSD Rogue 3.x, 4.x, 5.x, Advanced Rogue, Super-Rogue, UltraRogue, XRogue, Rog-O-Matic, and friends. Source archaeology, recovered binaries, modern ports, and documentation.",
+  "site_tagline": "The Rogue Restoration Project",
+  "site_description": "RogueForge, the Rogue Restoration Project, preserves Rogue and its descendants. In 2026 it started over from first principles, rebuilding early versions of Rogue until their source compiles to the same bytes as the original binaries.",
   "github_href": "https://github.com/rogueforge",
+  "headline": "Rogue Restoration Project",
+  "lede": "<p>In 2026 we went back to first principles: the three source trees that survive close to their releases (Rogue 3.6, 5.2 and 5.4), and the original programs preserved in Berkeley's BSD distribution trees. Where a binary survives, a version is done when its source compiles back into it.</p><p>Claude, Anthropic&rsquo;s AI model, did the heavy lifting, reading PDP-11 and VAX machine code one function at a time and rewriting C until the compilers of the day produced the very same bytes. Six versions so far. Nothing counted until it recompiled.</p>",
   "groups": [
     {
-      "slug": "about",
-      "title": "About",
-      "summary": "Project goals, the move from RogueForge.net and SourceForge to GitHub, contact, license.",
-      "links": [
-        { "label": "Home", "to": "" }
-      ]
+      "slug": "story",
+      "title": "Redux",
+      "nav_label": "Redux",
+      "summary": "How the project started over in 2026, and how a version of Rogue is rebuilt from its binary.",
+      "order": [
+        "starting-over",
+        "method",
+        "toolchains",
+        "simulators",
+        "working-with-claude",
+        "models",
+        "findings",
+        "playing"
+      ],
+      "heading": "Starting over…",
+      "sticker": "Redux!",
+      "sticker_lead": true
     },
     {
       "slug": "games",
-      "title": "The games",
-      "summary": "Per-game pages: history, recovered binaries, source releases, restoration status, guides.",
+      "title": "Every version",
+      "nav_label": "Versions",
+      "summary": "Six versions of Rogue were rebuilt from their original binaries in 2026, and PC Rogue and Rog-O-Matic are coming soon. The rest are restorations from their authors' source, made between 1992 and 2006, and still waiting for the same treatment.",
       "families": [
         {
-          "label": "Rogue",
-          "slugs": ["rogue-3-4", "rogue-3-6", "rogue-4-22", "rogue-5-2", "rogue-5-3", "rogue-5-4"]
+          "label": "Rogue at Berkeley",
+          "blurb": "Michael Toy, Glenn Wichman and Ken Arnold's game, as found with BSD Unix for the PDP-11 and the VAX.",
+          "slugs": [
+            "rogue-3-4",
+            "rogue-3-6",
+            "rogue-4-22",
+            "rogue-5-2",
+            "rogue-5-3",
+            "rogue-5-4"
+          ]
+        },
+        {
+          "label": "Rogue on the PC",
+          "blurb": "The A.I. Design version for the IBM PC, sold by Epyx, which grew from Berkeley's Rogue 5.2.",
+          "slugs": [
+            "pc-rogue-1-48"
+          ]
+        },
+        {
+          "label": "Bell Labs and after",
+          "blurb": "Larger games grown from the Rogue 3.6 source by programmers at AT&T, and the games that grew from those.",
+          "slugs": [
+            "super-rogue-9-0",
+            "advanced-rogue-1-0",
+            "advanced-rogue-5-8",
+            "advanced-rogue-5-8s",
+            "advanced-rogue-7-7",
+            "ultrarogue-1-07",
+            "xrogue-8-0"
+          ]
         },
         {
           "label": "Rog-O-Matic",
-          "slugs": ["rogomatic"]
-        },
-        {
-          "label": "Advanced Rogue",
-          "slugs": ["advanced-rogue-1-0", "advanced-rogue-5-8", "advanced-rogue-5-8s", "advanced-rogue-7-7"]
-        },
-        {
-          "label": "XRogue",
-          "slugs": ["xrogue-8-0"]
-        },
-        {
-          "label": "Super-Rogue",
-          "slugs": ["super-rogue-9-0"]
-        },
-        {
-          "label": "UltraRogue",
-          "slugs": ["ultrarogue-1-07"]
+          "blurb": "Not a version of Rogue but a player of it: the program from Carnegie Mellon that plays the game by itself.",
+          "slugs": [
+            "rogomatic"
+          ]
         }
       ]
     },
     {
       "slug": "docs",
-      "title": "Documentation",
-      "summary": "Yendor's Guide, the Vade-Mecum, manual pages, internals."
+      "title": "Guides",
+      "nav_label": "Guides",
+      "summary": "How to play: the original manual in both its editions, two companions to it, and the guides to Advanced Rogue and XRogue.",
+      "order": [
+        "dungeons-of-doom",
+        "dungeons-of-doom-1981",
+        "vade-mecum",
+        "how-to-win",
+        "advanced-rogue-5-8-guide",
+        "advanced-rogue-7-7-guide",
+        "xrogue-guide"
+      ],
+      "intro_md": "As the Archmage Yendor, I am far too busy to write an extensive guide, or indeed to write anything at all. Still, to spare myself the pleas for help from the many fools who would brave the Dungeons of Doom, I have gathered here what little information has been made available to the general populace. I confess the inaccuracies make me chuckle, but watching you suffer through them will afford me some small entertainment, and I shall observe your feeble attempts with amusement, as time permits. Should you escape with anything of interest, do stop by; I may spare you a few minutes.\n\n*The Archmage Yendor*"
     },
     {
       "slug": "history",
-      "title": "History & provenance",
-      "summary": "Where each version was rescued from — BSD CSRG distributions, FTP archives, personal mailings, the SourceForge era."
+      "title": "History",
+      "nav_label": "History",
+      "summary": "Forty-five years of Rogue, from a game written at Santa Cruz in 1980 to the rebuilds of 2026, and how the versions are related.",
+      "order": [
+        "history"
+      ],
+      "single": true
     }
-  ]
+  ],
+  "map": {
+    "message": "Hello, welcome to the Dungeons of Doom",
+    "status": "Level: 1  Versions: {versions}  Rebuilt: {rebuilt}  Hp: 12(12)  Str: 16(16)  Arm: 4",
+    "caption": "<p class=\"for-wide\">Each room is a version, joined by a corridor to the one it grew from; the pale corridor marks work that PC Rogue and Rogue 5.3 shared. Rog-O-Matic stands alone: it plays Rogue rather than descending from it. <span class=\"legend\"><span class=\"status status--rebuilt\">Lit rooms</span></span> were rebuilt from the original binary in 2026, <span class=\"legend\"><span class=\"status status--soon\">lavender rooms</span></span> are coming soon, and <span class=\"legend\"><span class=\"status status--port\">dark rooms</span></span> are still to come. Choose a room to read about it.</p><p class=\"for-narrow\">The six versions of Rogue rebuilt from their original binaries in 2026, each joined to the one it grew from. Choose a room to read about it, or see every version below.</p>",
+    "wide": {
+      "width": 80,
+      "height": 23,
+      "hero": [
+        47,
+        9
+      ],
+      "rooms": [
+        {
+          "id": "r34",
+          "x": 1,
+          "y": 0,
+          "w": 16,
+          "h": 5,
+          "label": "Rogue 3.4",
+          "sub": "PDP-11, 1981",
+          "href": "games/rogue-3-4",
+          "lit": true,
+          "step": 1,
+          "items": [
+            [
+              3,
+              3,
+              "!"
+            ]
+          ]
+        },
+        {
+          "id": "r36",
+          "x": 21,
+          "y": 0,
+          "w": 17,
+          "h": 5,
+          "label": "Rogue 3.6",
+          "sub": "VAX, 1981",
+          "href": "games/rogue-3-6",
+          "lit": true,
+          "step": 3,
+          "items": [
+            [
+              12,
+              3,
+              "?"
+            ]
+          ]
+        },
+        {
+          "id": "r422",
+          "x": 42,
+          "y": 0,
+          "w": 16,
+          "h": 5,
+          "label": "Rogue 4.22",
+          "sub": "VAX, 1982",
+          "href": "games/rogue-4-22",
+          "lit": true,
+          "step": 5,
+          "items": [
+            [
+              4,
+              3,
+              "]"
+            ]
+          ]
+        },
+        {
+          "id": "r52",
+          "x": 62,
+          "y": 0,
+          "w": 17,
+          "h": 5,
+          "label": "Rogue 5.2",
+          "sub": "VAX, 1982",
+          "href": "games/rogue-5-2",
+          "lit": true,
+          "step": 7,
+          "items": [
+            [
+              12,
+              3,
+              ")"
+            ]
+          ]
+        },
+        {
+          "id": "r53",
+          "x": 62,
+          "y": 6,
+          "w": 16,
+          "h": 5,
+          "label": "Rogue 5.3",
+          "sub": "VAX, 1983",
+          "href": "games/rogue-5-3",
+          "lit": true,
+          "step": 9,
+          "items": [
+            [
+              3,
+              3,
+              "*"
+            ]
+          ]
+        },
+        {
+          "id": "r54",
+          "x": 43,
+          "y": 6,
+          "w": 14,
+          "h": 5,
+          "label": "Rogue 5.4",
+          "sub": "VAX, 1985",
+          "href": "games/rogue-5-4",
+          "lit": true,
+          "step": 11,
+          "items": [
+            [
+              10,
+              3,
+              "%"
+            ]
+          ]
+        },
+        {
+          "id": "srog",
+          "x": 2,
+          "y": 6,
+          "w": 15,
+          "h": 5,
+          "label": "Super-Rogue",
+          "sub": "1982-84",
+          "href": "games/super-rogue-9-0"
+        },
+        {
+          "id": "ar58",
+          "x": 21,
+          "y": 6,
+          "w": 17,
+          "h": 5,
+          "label": "Adv. Rogue 5.8",
+          "sub": "1984-86",
+          "href": "games/advanced-rogue-5-8"
+        },
+        {
+          "id": "urog",
+          "x": 1,
+          "y": 12,
+          "w": 16,
+          "h": 5,
+          "label": "UltraRogue",
+          "sub": "1985-86",
+          "href": "games/ultrarogue-1-07"
+        },
+        {
+          "id": "ar77",
+          "x": 21,
+          "y": 12,
+          "w": 17,
+          "h": 5,
+          "label": "Adv. Rogue 7.7",
+          "sub": "1984-86",
+          "href": "games/advanced-rogue-7-7"
+        },
+        {
+          "id": "xrog",
+          "x": 43,
+          "y": 12,
+          "w": 14,
+          "h": 5,
+          "label": "XRogue",
+          "sub": "1989-92",
+          "href": "games/xrogue-8-0"
+        },
+        {
+          "id": "pc",
+          "x": 62,
+          "y": 12,
+          "w": 17,
+          "h": 5,
+          "label": "PC Rogue 1.48",
+          "sub": "IBM PC, 1983",
+          "href": "games/pc-rogue-1-48",
+          "soon": true,
+          "step": 12,
+          "sticker": "Coming soon"
+        },
+        {
+          "id": "rom",
+          "x": 32,
+          "y": 18,
+          "w": 17,
+          "h": 5,
+          "label": "Rog-O-Matic",
+          "sub": "CMU, 1984",
+          "href": "games/rogomatic",
+          "soon": true,
+          "step": 13,
+          "sticker": "Coming soon"
+        }
+      ],
+      "corridors": [
+        {
+          "points": [
+            [
+              16,
+              2
+            ],
+            [
+              21,
+              2
+            ]
+          ],
+          "lit": true,
+          "step": 2
+        },
+        {
+          "points": [
+            [
+              37,
+              3
+            ],
+            [
+              39,
+              3
+            ],
+            [
+              39,
+              1
+            ],
+            [
+              42,
+              1
+            ]
+          ],
+          "lit": true,
+          "step": 4
+        },
+        {
+          "points": [
+            [
+              57,
+              2
+            ],
+            [
+              62,
+              2
+            ]
+          ],
+          "lit": true,
+          "step": 6
+        },
+        {
+          "points": [
+            [
+              70,
+              4
+            ],
+            [
+              70,
+              6
+            ]
+          ],
+          "lit": true,
+          "step": 8
+        },
+        {
+          "points": [
+            [
+              62,
+              8
+            ],
+            [
+              59,
+              8
+            ],
+            [
+              59,
+              9
+            ],
+            [
+              56,
+              9
+            ]
+          ],
+          "lit": true,
+          "step": 10
+        },
+        {
+          "points": [
+            [
+              24,
+              4
+            ],
+            [
+              24,
+              5
+            ],
+            [
+              9,
+              5
+            ],
+            [
+              9,
+              6
+            ]
+          ]
+        },
+        {
+          "points": [
+            [
+              29,
+              4
+            ],
+            [
+              29,
+              6
+            ]
+          ]
+        },
+        {
+          "points": [
+            [
+              21,
+              8
+            ],
+            [
+              19,
+              8
+            ],
+            [
+              19,
+              11
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              8,
+              12
+            ]
+          ]
+        },
+        {
+          "points": [
+            [
+              30,
+              10
+            ],
+            [
+              30,
+              12
+            ]
+          ]
+        },
+        {
+          "points": [
+            [
+              37,
+              14
+            ],
+            [
+              43,
+              14
+            ]
+          ]
+        },
+        {
+          "points": [
+            [
+              78,
+              3
+            ],
+            [
+              79,
+              3
+            ],
+            [
+              79,
+              14
+            ],
+            [
+              78,
+              14
+            ]
+          ]
+        },
+        {
+          "points": [
+            [
+              68,
+              10
+            ],
+            [
+              68,
+              12
+            ]
+          ],
+          "shared": true
+        }
+      ]
+    },
+    "narrow": {
+      "width": 40,
+      "height": 22,
+      "message": "Welcome to the Dungeons of Doom",
+      "status": "Level: 1  Rebuilt: {rebuilt}  Hp: 12(12)",
+      "hero": [
+        27,
+        19
+      ],
+      "rooms": [
+        {
+          "id": "r34",
+          "x": 1,
+          "y": 1,
+          "w": 17,
+          "h": 6,
+          "label": "Rogue 3.4",
+          "sub": "PDP-11, 1981",
+          "href": "games/rogue-3-4",
+          "lit": true,
+          "step": 1,
+          "items": [
+            [
+              3,
+              4,
+              "!"
+            ]
+          ]
+        },
+        {
+          "id": "r36",
+          "x": 22,
+          "y": 1,
+          "w": 17,
+          "h": 6,
+          "label": "Rogue 3.6",
+          "sub": "VAX, 1981",
+          "href": "games/rogue-3-6",
+          "lit": true,
+          "step": 3,
+          "items": [
+            [
+              12,
+              4,
+              "?"
+            ]
+          ]
+        },
+        {
+          "id": "r422",
+          "x": 22,
+          "y": 8,
+          "w": 17,
+          "h": 6,
+          "label": "Rogue 4.22",
+          "sub": "VAX, 1982",
+          "href": "games/rogue-4-22",
+          "lit": true,
+          "step": 5,
+          "items": [
+            [
+              3,
+              4,
+              "]"
+            ]
+          ]
+        },
+        {
+          "id": "r52",
+          "x": 1,
+          "y": 8,
+          "w": 17,
+          "h": 6,
+          "label": "Rogue 5.2",
+          "sub": "VAX, 1982",
+          "href": "games/rogue-5-2",
+          "lit": true,
+          "step": 7,
+          "items": [
+            [
+              12,
+              4,
+              ")"
+            ]
+          ]
+        },
+        {
+          "id": "r53",
+          "x": 1,
+          "y": 15,
+          "w": 17,
+          "h": 6,
+          "label": "Rogue 5.3",
+          "sub": "VAX, 1983",
+          "href": "games/rogue-5-3",
+          "lit": true,
+          "step": 9,
+          "items": [
+            [
+              4,
+              4,
+              "*"
+            ]
+          ]
+        },
+        {
+          "id": "r54",
+          "x": 22,
+          "y": 15,
+          "w": 17,
+          "h": 6,
+          "label": "Rogue 5.4",
+          "sub": "VAX, 1985",
+          "href": "games/rogue-5-4",
+          "lit": true,
+          "step": 11,
+          "items": [
+            [
+              12,
+              4,
+              "%"
+            ]
+          ]
+        }
+      ],
+      "corridors": [
+        {
+          "points": [
+            [
+              17,
+              3
+            ],
+            [
+              22,
+              3
+            ]
+          ],
+          "lit": true,
+          "step": 2
+        },
+        {
+          "points": [
+            [
+              30,
+              6
+            ],
+            [
+              30,
+              8
+            ]
+          ],
+          "lit": true,
+          "step": 4
+        },
+        {
+          "points": [
+            [
+              22,
+              11
+            ],
+            [
+              17,
+              11
+            ]
+          ],
+          "lit": true,
+          "step": 6
+        },
+        {
+          "points": [
+            [
+              9,
+              13
+            ],
+            [
+              9,
+              15
+            ]
+          ],
+          "lit": true,
+          "step": 8
+        },
+        {
+          "points": [
+            [
+              17,
+              18
+            ],
+            [
+              22,
+              18
+            ]
+          ],
+          "lit": true,
+          "step": 10
+        }
+      ]
+    }
+  },
+  "headline_note": "Redux!",
+  "contact_email": "nkissebe+yendor@gmail.com",
+  "legacy_href": "http://rogue.rogueforge.net/"
 }

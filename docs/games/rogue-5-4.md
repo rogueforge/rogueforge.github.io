@@ -1,15 +1,58 @@
+---
+short: Rogue 5.4
+year: 1985
+machine: VAX
+status: rebuilt
+summary: The last Berkeley Rogue, found in the 4.3BSD tree as a stripped object file, rebuilt with a compiler dated to early 1985.
+released: Version string "rogue 31/03/85"; in the 4.3BSD tree, 1986
+origin: 4.3BSD, /usr/src/games/rogue/main.obj (CSRG Archive, Disc 1)
+toolchain: CSRG VAX C compiler as of early 1985
+verified: Identical after stripping, with two small post-compile patches
+repo: rogue5.4-19860109-bsd43, rogue5.4
+---
 # Rogue 5.4
 
-Released on or around **3/31/1985** (internal date on executable). Probably
-developed on a VAX running BSD/Unix 4.3.
+Rogue 5.4 is the version found with 4.3BSD, and the basis of almost
+every modern port. In the 4.3BSD source tree it is a single object
+file, `main.obj`, with its symbols stripped, together with the
+machine-dependent source a site needed to finish the build. The only
+date inside is the version string, `rogue 31/03/85`.
+
+## The 2026 rebuild
+
+Rogue 5.4 was the first version attempted, in March 2026, and the first
+to come close. Ghidra's VAX support needed fixing before it could read
+the object file at all; once it could, 234 functions and 270 globals
+were recovered.
+
+The source Ken Arnold published on SourceForge in 2002 was the starting
+point, and it is close, but it is not quite the game in the binary:
+in places it is an earlier state, nearer Rogue 5.3. The 1985 binary has
+commands and routines that appear in no surviving source: `a` to repeat a command,
+`,` to pick something up, a mystery trap, and functions named
+`door_look()`, `replay()` and `reset_fight()`.
+
+No released compiler reproduces the code. Two dated changes in the
+compiler's own source bracket the one that did, between January and
+December 1985. A compiler rebuilt from Berkeley's sources as of
+19 March 1985 matches 232 of 234 functions, which fits the date in the
+version string.
+
+### What is still open
+
+After stripping, the rebuild matches `main.obj` only with two small
+patches applied after compiling: the exit from `do_move()`, and six
+bytes of register choice in `command()`. The likely cause is a compiler
+build a little different from the one reconstructed. The 4.3BSD
+installed binary is not yet an exact match either.
 
 ## Restoration source material
 
 ### Binary releases
 
-Extracted from BSD/Unix 4.3 ([rogue5.4-bsd4.3.tar](http://rogue.rogueforge.net/files/rogue5.4/rogue5.4-bsd4.3.tar),
-3/4/87) — original location: <http://www.mckusick.com/csrg/>
-[Disc 1, directory 4.3]:
+Extracted from BSD/Unix 4.3
+([rogue5.4-bsd4.3.tar](http://rogue.rogueforge.net/files/rogue5.4/rogue5.4-bsd4.3.tar)),
+from the [CSRG Archive](http://www.mckusick.com/csrg/), Disc 1, directory 4.3:
 
 ```
 -r--r--r--   1589 1986-01-09 05:40 4.3/usr/src/games/rogue/machdep.h
@@ -23,9 +66,9 @@ Extracted from BSD/Unix 4.3 ([rogue5.4-bsd4.3.tar](http://rogue.rogueforge.net/f
 -r--r--r--    630 1986-04-27 12:01 4.3/usr/doc/usd/33.rogue/Makefile
 ```
 
-Extracted from BSD/Unix 2.10 ([rogue5.4-bsd2.10.tar](http://rogue.rogueforge.net/files/rogue5.4/rogue5.4-bsd2.10.tar),
-9/7/87) — original location: <http://www.mckusick.com/csrg/>
-[Disc 1, directory 2.10]:
+Extracted from BSD/Unix 2.10
+([rogue5.4-bsd2.10.tar](http://rogue.rogueforge.net/files/rogue5.4/rogue5.4-bsd2.10.tar)),
+CSRG Archive, Disc 1, directory 2.10:
 
 ```
 -r--r--r--  2283 1986-12-14 03:08 2.10/root/usr/man/man6/rogue.6
@@ -36,12 +79,18 @@ Extracted from BSD/Unix 2.10 ([rogue5.4-bsd2.10.tar](http://rogue.rogueforge.net
 
 ### Source releases
 
-- **SourceForge (Ken Arnold) initial** — [rogue-r1.1.tar.gz](http://rogue.rogueforge.net/files/rogue5.4/rogue-r1.1.tar.gz),
-  4/22/2002. Original location: <http://sourceforge.net/projects/rogue>.
-- **SourceForge (Ken Arnold) current** (10/1/2013) —
-  [rogue.tar.gz](http://rogue.rogueforge.net/files/rogue5.4/rogue.tar.gz).
+- **Ken Arnold's SourceForge release, first version**:
+  [rogue-r1.1.tar.gz](http://rogue.rogueforge.net/files/rogue5.4/rogue-r1.1.tar.gz),
+  22 April 2002, from <https://sourceforge.net/projects/rogue/>.
+- **Ken Arnold's SourceForge release, current**:
+  [rogue.tar.gz](http://rogue.rogueforge.net/files/rogue5.4/rogue.tar.gz),
+  1 October 2013.
 
-## Repository
+## Repositories
 
-Active development:
-<https://github.com/rogueforge/rogue5.4>.
+- <https://github.com/rogueforge/rogue5.4-19860109-bsd43>: the 2026
+  rebuild of `main.obj`.
+- <https://github.com/rogueforge/rogue5.4-19840331-bsd42>: Ken Arnold's
+  later source, back-ported to the C of the period to show what it
+  might have looked like. It is not verified against any binary.
+- <https://github.com/rogueforge/rogue5.4>: the earlier restoration.

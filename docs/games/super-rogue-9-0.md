@@ -1,3 +1,13 @@
+---
+short: Super-Rogue 9.0
+year: 1983–84
+machine: Unix
+status: port
+summary: Robert Kindelberger's expansion of Rogue 3.6 at Bell Labs, restored from his source in 2005.
+released: Circa May 1983 to July 1984
+origin: Source from Robert D. Kindelberger, 2004
+verified: Restored 2005; not yet rebuilt from a binary
+---
 # Super-Rogue 9.0
 
 Super-Rogue was developed by a group of employees at **AT&T Bell Labs
@@ -24,9 +34,7 @@ and new save/restore code.
 
 ## Repository
 
-Active development:
-<https://github.com/rogueforge/srogue>
-(formerly `http://rogue.rogueforge.net/viewvc/srogue/trunk`).
+Not yet on GitHub. Development was formerly `http://rogue.rogueforge.net/viewvc/srogue/trunk`.
 
 ## Release history
 

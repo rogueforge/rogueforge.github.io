@@ -1,52 +1,24 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ site_name }} - {{ site_tagline }}</title>
-  <meta name="description" content="{{ site_description }}">
-  <link rel="stylesheet" href="{{ assets_href }}">
-</head>
-<body class="site-home">
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <div class="page-shell">
-    <header class="site-header">
-      <a class="brand" href="{{ home_href }}" aria-label="{{ site_name }} home">
-        <img class="brand__logo" src="{{ logo_href }}" alt="" aria-hidden="true">
-        <span class="brand__name" aria-hidden="true"><span class="brand__name--rogue">Rogue</span><span class="brand__name--forge">Forge</span></span>
-      </a>
-      <nav class="top-nav" aria-label="Primary">
-        <a href="{{ github_href }}">GitHub</a>
-      </nav>
-    </header>
-
-    <div class="breadcrumbs" aria-label="Breadcrumb">{{ breadcrumb }}</div>
-
-    <main id="main-content" class="layout" tabindex="-1">
-      <aside class="aside" aria-label="Site navigation">
-        <nav class="nav">
-{{ nav }}
-        </nav>
-      </aside>
-
-      <article class="content">
-        <header class="content__header">
-          <p class="eyebrow">Welcome</p>
-          <h1>{{ site_name }}</h1>
-          <p class="content__tagline">{{ site_tagline }}</p>
-          <p class="content__description">{{ site_description }}</p>
-        </header>
-
-        <section class="content__about">
-          <h2>About this project</h2>
-{{ readme_html }}
-        </section>
-      </article>
-    </main>
-
-    <footer class="site-footer">
-      <p>{{ site_name }} &middot; <a href="{{ github_href }}">GitHub</a></p>
-    </footer>
+<section class="hero">
+  <div class="hero__text">
+    <h1 class="hero__title">{{ headline }}<span class="redux"><span class="visually-hidden">, </span>{{ headline_note }}</span></h1>
+    <div class="hero__lede">{{ lede }}</div>
   </div>
-</body>
-</html>
+  <figure class="hero__map">
+{{ map }}
+    <figcaption>{{ map_caption }}</figcaption>
+  </figure>
+</section>
+
+<section class="story" aria-labelledby="story">
+  <div class="prose">
+{{ story_html }}
+  </div>
+</section>
+
+<section class="catalog" id="versions" aria-labelledby="versions-heading">
+  <header class="catalog__head">
+    <h2 id="versions-heading">{{ versions_heading }}</h2>
+    <p>{{ versions_summary }}</p>
+  </header>
+{{ version_index }}
+</section>

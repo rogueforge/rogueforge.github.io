@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="theme-color" content="#1e1a33">
+  <link rel="icon" href="{{ logo_href }}">
+  <link rel="preload" href="{{ css_href }}" as="style">
+  <link rel="stylesheet" href="{{ css_href }}">
+</head>
+<body class="{{ body_class }}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="masthead__inner">
+      <a class="brand" href="{{ home_href }}">
+        <img class="brand__logo" src="{{ logo_href }}" alt="" width="53" height="44">
+        <span class="brand__name">Rogue<span>Forge</span></span>
+      </a>
+      <nav class="topnav" aria-label="Sections">
+        <ul>
+{{ topnav }}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+{{ main }}
+  </main>
+
+  <footer class="colophon">
+    <div class="colophon__inner">
+      <div class="colophon__lead">
+        <p><a href="{{ home_href }}"><img src="{{ logo_href }}" alt="" width="34" height="28"> {{ site_name }}</a>, the Rogue Restoration Project, keeps Rogue and its descendants alive as software you can build, read and play.</p>
+      </div>
+      <div>
+        <h2>Get in touch</h2>
+        <p>Found an old tape, floppy or disk image with a version of Rogue on it? Remember working on one? Spotted a mistake? Write to <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>. For bugs and patches, open an issue on the game's repository on <a href="{{ github_href }}">GitHub</a>.</p>
+      </div>
+      <div>
+        <h2>Licences</h2>
+        <p>Each game keeps the licence of its original source, given in its repository. Text on this site is <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Older downloads are still on the <a href="{{ legacy_href }}">legacy site</a>.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

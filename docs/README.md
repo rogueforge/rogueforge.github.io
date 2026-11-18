@@ -1,57 +1,45 @@
-# About this project
+## Why we started over
 
-**RogueForge** is the umbrella home for restoring and maintaining classic
-*Rogue* and its direct descendants — the BSD lineage (Rogue 3.x, 4.x, 5.x),
-the AT&T Bell Labs branch (Advanced Rogue, Super-Rogue), Herb Chong's
-UltraRogue, Robert Pietkivitch's XRogue, and Andrew Appel & Leonard
-Hamey's Rog-O-Matic robot.
+RogueForge has restored Rogue and its descendants since the early 2000s.
+Those restorations began from source code that happened to survive:
+copies passed between sites, edited, ported and edited again. None of
+them could say for certain what the code that Berkeley compiled in 1981
+actually looked like.
 
-The original [rogueforge.net](http://www.rogueforge.net/) site hosted this
-work from 2004 onward, running on a CMS Made Simple install on Debian
-Squeeze. This GitHub Pages site is its successor — same content, modern
-hosting, plus first-class links into the per-game source repositories that
-now live under the [`rogueforge` GitHub organization](https://github.com/rogueforge).
+In 2026 the Rogue Restoration Project went back to first principles.
+Three source trees survive that are likely close to their versions:
+Rogue 3.6, 5.2 and 5.4. And the programs themselves survive: the BSD
+distribution trees kept on Kirk McKusick's CSRG archive discs and at
+The Unix Heritage Society hold copies of the original executables. Start from the
+nearest source tree. Work out what the binary says it really was. Prove
+it by compiling with the compilers of the day and getting the same file,
+byte for byte. [Read the whole story](story/starting-over.md).
 
-## What lives here
+## How a version is rebuilt
 
-- **[The games](games/)** — one page per restored version, with recovered
-  binaries, source releases, restoration notes, and a link to the
-  authoritative GitHub repo.
-- **[Documentation](docs/)** — Yendor's Guide, the Vade-Mecum, and per-game
-  player manuals.
-- **[History & provenance](history/)** — where each version was rescued
-  from: the BSD CSRG distribution discs, the UTexas FTP archive, the
-  defunct UIUC anonymous-FTP site, personal correspondence with the
-  original authors.
-- **[About](about/)** — project goals, the migration from RogueForge.net
-  and SourceForge to GitHub, contact, license.
+<ol class="steps">
+<li><strong>Find the binary.</strong> Take the executable or object file from a dated distribution, such as Rogue 3.4 from 2.8BSD or Rogue 5.3 from 4.2BSD.</li>
+<li><strong>Read the machine code.</strong> Disassemble and decompile it with Ghidra and radare2, after fixing their PDP-11 and VAX support well enough to trust.</li>
+<li><strong>Write the C.</strong> Start from the closest surviving source, then change it function by function until each one compiles to the instructions in the binary.</li>
+<li><strong>Prove it.</strong> Build with the original compiler, assembler and linker, ported to modern Linux, and compare the whole file. Done means the checksums match.</li>
+</ol>
 
-## The lineage at a glance
+Claude did most of the reading, rewriting and recompiling, working
+alongside a person who decided what counted as evidence.
+[How that worked](story/working-with-claude.md).
 
-```
-                  Rogue 3.x (Toy/Arnold/Wichman, UCSC/UCB)
-                       |
-                       v
-            +----------+-----------+--------------+
-            |          |           |              |
-        Rogue 4.x   Rogue 5.x   Super-Rogue    Advanced Rogue
-        (Kenneth Arnold,         (R. Kindelberger,  (AT&T Bell Labs,
-         UCB)                     AT&T BL)          Morgan/Dalka et al.)
-                       |                            |
-                       |                            v
-                       |                       UltraRogue
-                       |                       (Herb Chong)
-                       v                            |
-                  Rog-O-Matic                       v
-                  (Appel/Hamey/Mauldin)       Advanced Rogue 7.7
-                  CMU                              |
-                                                   v
-                                              XRogue 8.0
-                                              (Robert Pietkivitch,
-                                               AT&T UNIX PC)
-```
+## Where things stand
 
-## Contact
+| Version | Rebuilt from | Result |
+|---|---|---|
+| [Rogue 3.4](games/rogue-3-4.md) | 2.8BSD, PDP-11, May 1981 | Byte-identical |
+| [Rogue 3.6](games/rogue-3-6.md) | 4.1BSD, VAX, October 1981 | Byte-identical |
+| | 2.9BSD, PDP-11, March 1983 | Byte-identical |
+| [Rogue 4.22](games/rogue-4-22.md) | 4.1aBSD, VAX, March 1982 | Byte-identical |
+| [Rogue 5.2](games/rogue-5-2.md) | 4.1BSD last tape, VAX, July 1982 | Byte-identical |
+| [Rogue 5.3](games/rogue-5-3.md) | 4.2BSD, VAX, August 1983 | Byte-identical, symbol table included |
+| [Rogue 5.4](games/rogue-5-4.md) | 4.3BSD, VAX, January 1986 | Identical code, after two small patches |
 
-Questions, source contributions, or rescued artifacts:
-`nkissebe+yendor@gmail.com`.
+Every rebuilt version has its own repository under
+[github.com/rogueforge](https://github.com/rogueforge), named for the
+date and system of the binary it matches.

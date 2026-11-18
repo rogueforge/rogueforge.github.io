@@ -1,3 +1,12 @@
+---
+short: UltraRogue 1.0.7
+year: 1985–86
+machine: Unix
+status: port
+summary: Herb Chong's descendant of Advanced Rogue, and RogueForge's first restoration.
+origin: Source from Herb Chong, 1992
+verified: Restored 1992–2005; not yet rebuilt from a binary
+---
 # UltraRogue 1.0.7
 
 UltraRogue was developed by **Herb Chong between 1985 and 1986**. Mostly
@@ -26,9 +35,7 @@ continue to occur.
 
 ## Repository
 
-Active development:
-<https://github.com/rogueforge/urogue>
-(formerly `http://rogue.rogueforge.net/viewvc/urogue/trunk`).
+Not yet on GitHub. Development was formerly `http://rogue.rogueforge.net/viewvc/urogue/trunk`.
 
 ## Release history
 

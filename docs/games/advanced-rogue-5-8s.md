@@ -1,3 +1,10 @@
+---
+short: Advanced Rogue 5.8s
+year: 1984–86
+machine: Unix
+status: planned
+summary: A slightly enhanced Advanced Rogue 5.8, to be restored separately.
+---
 # Advanced Rogue 5.8s
 
 The "s" variant of Advanced Rogue 5.8 — a slightly enhanced version (often
@@ -10,4 +17,4 @@ as a sibling rather than folded into the main 5.8 line.
 
 ## Repository
 
-To be published at <https://github.com/rogueforge/arogue5.8s>.
+Not yet on GitHub.

@@ -1,19 +1,49 @@
+---
+short: Rogue 3.6
+year: 1981
+machine: VAX and PDP-11
+status: rebuilt
+summary: The Rogue that went out with 4.1BSD and 2.9BSD, rebuilt to match both the VAX and the PDP-11 binaries.
+released: Version string dated 21 April 1981; 4.1BSD binary 11 October 1981
+origin: 4.1BSD (TUHS); 2.9BSD /usr/70/rogue and /usr/games/rogue (CSRG Archive, Disc 1)
+toolchain: 4.1BSD VAX C compiler; 2.9BSD PDP-11 C compiler
+verified: Byte-identical on the VAX and the PDP-11
+repo: rogue3.6-19811011-bsd41, rogue3.6
+---
 # Rogue 3.6
 
-Released **6/16/1981** (build string indicates 4/21/81). Developed for VAX
-11/780 and PDP 11/70 minicomputers running BSD Unix.
+Rogue 3.6 is the version most people met first. It shipped with 4.1BSD
+for the VAX in 1981 and with 2.9BSD for the PDP-11 in 1983, and copies
+of its source travelled to many other sites.
+
+## The 2026 rebuild
+
+There are three binaries, and the rebuilt source matches each of them:
+
+- **4.1BSD, VAX** (93,184 bytes, 11 October 1981): byte-identical. All
+  173 of the game's functions match. The binary turns out to be a mix,
+  function by function, of two of the surviving site copies.
+- **2.9BSD, PDP-11** (82,920 bytes, March 1983): byte-identical, matched
+  on 5 July 2026, with all 174 game functions strict matches.
+- **2.9BSD, PDP-11, overlaid** (February 1983): a debug build split into
+  seven overlays, which keeps its messages in a separate file,
+  `roguestrings`. Its code and data are identical; 49 entries in its
+  symbol table still differ.
+
+The surviving source copies are dated from January 1982 to June 1984 and
+all carry the version string `3.6 (Berkeley) 4/21/81`. They disagree in
+places, and the binaries settled which version of each function was compiled.
 
 ## Restoration source material
 
 ### Original binary releases
 
-Found in the reconstructed September 1, 1981 release of 4.1BSD (10/11/81)
-— original location:
-<https://www.tuhs.org/Archive/Distributions/UCB/4.1BSD-19810901-reconstructed/>.
+Found in the reconstructed 4.1BSD release of 1 September 1981, at
+[The Unix Heritage Society](https://www.tuhs.org/Archive/Distributions/UCB/).
 
-Extracted from BSD/Unix 2.9 ([rogue3.6-bsd2.9.tar](http://rogue.rogueforge.net/files/rogue3.6/rogue3.6-bsd2.9-tar))
-(2/6/83, 3/27/83) — original location: <http://www.mckusick.com/csrg/>
-[Disc 1, directory 2.9]:
+Extracted from BSD/Unix 2.9
+([rogue3.6-bsd2.9.tar](http://rogue.rogueforge.net/files/rogue3.6/rogue3.6-bsd2.9.tar)),
+from the [CSRG Archive](http://www.mckusick.com/csrg/), Disc 1, directory 2.9:
 
 ```
 -rw-r--r--   1940 1983-08-01 19:08:58 2.9/usr/man/cat6/rogue.6
@@ -24,8 +54,9 @@ Extracted from BSD/Unix 2.9 ([rogue3.6-bsd2.9.tar](http://rogue.rogueforge.net/f
 -r--------   5531 1982-12-12 22:01:28 2.9/usr/games/lib/roguestrings
 ```
 
-Extracted from BSD/Unix 2.9pucc ([rogue3.6-bsd2.9pucc.tar](http://rogue.rogueforge.net/files/rogue3.6/rogue3.6-bsd2.9pucc-tar))
-— original location: <http://www.mckusick.com/csrg/> [Disc 1, directory 2.9pucc]:
+Extracted from BSD/Unix 2.9pucc
+([rogue3.6-bsd2.9pucc.tar](http://rogue.rogueforge.net/files/rogue3.6/rogue3.6-bsd2.9pucc.tar)),
+CSRG Archive, Disc 1, directory 2.9pucc:
 
 ```
 -rw-r--r-- 1492 1984-02-25 03:28:58 2.9pucc/usr/man/man6/rogue.6
@@ -33,17 +64,16 @@ Extracted from BSD/Unix 2.9pucc ([rogue3.6-bsd2.9pucc.tar](http://rogue.roguefor
 
 ### Source releases
 
-- **Rogue 3.6 BRL** — [rogue-3.1.tar](http://rogue.rogueforge.net/files/rogue3.6/rogue-3.1.tar),
-  08/05/82 (6/16/81 base). Original location:
+- **Rogue 3.6 BRL**: [rogue-3.1.tar](http://rogue.rogueforge.net/files/rogue3.6/rogue-3.1.tar),
+  5 August 1982. Originally from
   `ftp://emx.utexas.edu/pub/mnt/source/games/rogue-3.1.tar.Z`.
-- **Rogue 3.6 NMT** — [rogue3.6.nmt.tar](http://rogue.rogueforge.net/files/rogue3.6/rogue3.6.nmt.tar),
-  6/23/84 (6/16/81 base). Submitted by Aydin Edguer.
-- **Rogue 3.6 CMU (rogomatic)** — [r36.tar.Z](http://rogue.rogueforge.net/files/rogue3.6/r36.tar.Z),
-  03/17/85 (6/16/81 base).
+- **Rogue 3.6 NMT**: 23 June 1984, sent by Aydin Edguer.
+- **Rogue 3.6 CMU (Rog-O-Matic)**: [r36.tar.Z](http://rogue.rogueforge.net/files/rogue3.6/r36.tar.Z),
+  17 March 1985.
 
-## Repository
+## Repositories
 
-Active development:
-<https://github.com/rogueforge/rogue3.6>
-(formerly tracked in the legacy Trac/Subversion instance at
-`http://rogue.rogueforge.net/trac/browser/rogue3.6/trunk`).
+- <https://github.com/rogueforge/rogue3.6-19811011-bsd41>: the 2026
+  rebuild of the 4.1BSD binary.
+- <https://github.com/rogueforge/rogue3.6>: the earlier restoration,
+  with its 3.6.x releases.

@@ -1,24 +1,46 @@
+---
+short: Rogue 3.4
+year: 1981
+machine: PDP-11
+status: rebuilt
+summary: The earliest Rogue whose binary survives, from 2.8BSD for the PDP-11, and the first version rebuilt byte for byte.
+released: Version string dated 16 April 1981; linked 21 May 1981
+origin: 2.8BSD, /usr/bin.v7/ucb/rogue (CSRG Archive, Disc 1)
+toolchain: 2.8BSD Ritchie C compiler and a pre-release 2.8BSD library
+verified: Byte-identical, 3 July 2026
+repo: rogue3.4-19810521-bsd28
+---
 # Rogue 3.4
 
-The earliest released version of Rogue in this lineage. Developed at UCSC
-and UCB by Glenn Wichman, Michael Toy, and Ken Arnold; the BSD-distributed
-3.x line is the canonical ancestor of every game on this site.
+Rogue was written at UC Santa Cruz and UC Berkeley by Michael Toy and
+Glenn Wichman, with Ken Arnold. Version 3.4 is the oldest that survives
+as a program: a 70,364-byte PDP-11 executable on the 2.8BSD distribution,
+linked at 04:41 on the morning of 21 May 1981.
 
-<div class="callout">
-<strong>Placeholder.</strong> This page is a stub. Recovered binaries,
-restoration notes, and the GitHub repository link will be filled in as
-the version's content is migrated from the legacy RogueForge.net site
-and the local working trees.
-</div>
+## The 2026 rebuild
 
-## Planned content
+Rogue 3.4 was the hardest of the rebuilds and the one that set the
+standard for the rest. The binary is fully stripped, so none of its 266
+functions arrived with a name. 145 of them are the game; the other 121
+are the C library, and those had to match too. No source for 3.4
+survives; the work began from the nearest 3.6 sources and moved back.
 
-- Original binary releases (BSD 1.x, BSD 2.x source-tree archaeology)
-- Source releases
-- Restoration notes (ghidra / radare2 disassembly work in
-  `~/rogueforge/root/trunk/rogue3.4`)
-- GitHub repository link
+A first pass in March 2026 read every function against the
+disassembly and judged them all correct. Compiling that source in June
+proved otherwise. The byte-exact campaign took the game from 80
+matching functions to 139 to all 145, and the whole file matched on
+3 July. The last difference was a single rounding bit in a
+floating-point constant in the C library.
+
+The rebuilt game was then played against the original under a PDP-11
+simulator with the same random seed: 28 of 28 opening dungeons were
+identical, and more than 350 turns ran with no divergence.
+
+See [What the binaries told us](../story/findings.md) for the bugs and
+oddities the rebuild uncovered, including the 1981 *Guide to the
+Dungeons of Doom*, whose source was rebuilt the same way.
 
 ## Repository
 
-To be published at <https://github.com/rogueforge/rogue3.4>.
+<https://github.com/rogueforge/rogue3.4-19810521-bsd28>, named for the
+date and system of the binary it reproduces.

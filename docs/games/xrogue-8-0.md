@@ -1,3 +1,13 @@
+---
+short: XRogue 8.0
+year: 1989–92
+machine: AT&T UNIX PC
+status: port
+summary: Robert Pietkivitch's continuation of Advanced Rogue 7.7, restored with him from 1996.
+origin: Source from Robert Pietkivitch, 1996
+verified: Restored (8.0.3); not yet rebuilt from a binary
+repo: xrogue8.0
+---
 # XRogue 8.0
 
 > **In memory of Robert Pietkivitch (1955–2002).**
@@ -23,9 +33,8 @@ changes before his untimely death in 2002.
 - [XRogue 8.0.3 Win32 Binary (Windows)](http://rogue.rogueforge.net/files/xrogue/xrogue8.0.3-win32.zip)
 - [XRogue 8.0.3 AIX Binary](http://rogue.rogueforge.net/files/xrogue/xrogue8.0.3-aix.tar.gz)
 - [XRogue 8.0.3 Source Code](http://rogue.rogueforge.net/files/xrogue/xrogue8.0.3-src.tar.gz)
-- [A Guide to XRogue (dod80)](http://rogue.rogueforge.net/xrogue-8-0/dod80/)
+- [A Guide to XRogue](../docs/xrogue-guide.md)
 
 ## Repository
 
-Active development:
-<https://github.com/rogueforge/xrogue>.
+<https://github.com/rogueforge/xrogue8.0>

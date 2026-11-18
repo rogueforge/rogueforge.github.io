@@ -1,50 +1,18 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page_title }} | {{ site_name }}</title>
-  <meta name="description" content="{{ page_summary }}">
-  <link rel="stylesheet" href="{{ assets_href }}">
-</head>
-<body class="site-doc">
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <div class="page-shell">
-    <header class="site-header">
-      <a class="brand" href="{{ home_href }}" aria-label="{{ site_name }} home">
-        <img class="brand__logo" src="{{ logo_href }}" alt="" aria-hidden="true">
-        <span class="brand__name" aria-hidden="true"><span class="brand__name--rogue">Rogue</span><span class="brand__name--forge">Forge</span></span>
-      </a>
-      <nav class="top-nav" aria-label="Primary">
-        <a href="{{ github_href }}">GitHub</a>
-      </nav>
-    </header>
-
-    <div class="breadcrumbs" aria-label="Breadcrumb">{{ breadcrumb }}</div>
-
-    <main id="main-content" class="layout" tabindex="-1">
-      <aside class="aside" aria-label="Site navigation">
-        <nav class="nav">
-{{ nav }}
-        </nav>
-      </aside>
-
-      <article class="content">
-        <header class="content__header">
-          <p class="eyebrow"><a href="{{ group_href }}">{{ group_title }}</a></p>
-          <h1>{{ page_title }}</h1>
-          <p class="content__source">Source: <code>{{ source_path }}</code></p>
-        </header>
+<article class="doc">
+  <header class="page-head">
+    {{ glyph }}
+    <p class="page-head__crumb"><a href="{{ group_href }}">{{ group_title }}</a></p>
+    <h1>{{ page_title }}</h1>
+    {{ dek }}
+  </header>
+  <div class="doc__grid">
+    <aside class="doc__aside">
+{{ facts }}
 {{ toc }}
-        <div class="prose">
+    </aside>
+    <div class="prose doc__body">
 {{ content }}
-        </div>
-      </article>
-    </main>
-
-    <footer class="site-footer">
-      <p>{{ site_name }} &middot; <a href="{{ home_href }}">Home</a></p>
-    </footer>
+    </div>
   </div>
-</body>
-</html>
+{{ pager }}
+</article>
