@@ -12,32 +12,31 @@ repo: xrogue8.0
 
 > **In memory of Robert Pietkivitch (1955–2002).**
 > Bob passed away on December 3rd, 2002.
-> He will always be loved by friends and family.
+> He will be missed.
 
 ---
 
 XRogue was developed by **Robert Pietkivitch between 1989 and 1991 for the
 AT&T UNIX PC**. It is based on Advanced Rogue 7.7.
 
-Robert provided me with the source code in 1996 and provided much
-encouragement, which eventually led to the creation of the SourceForge
-project. He worked with me to bring XRogue back to life. After the
-restoration of 8.0 was complete he made a series of enhancements in 2000
-for the next version. Unfortunately he never got a chance to send those
-changes before his untimely death in 2002.
+Robert was at AT&T Bell Labs when he took up the Advanced Rogue source,
+after its authors, Michael Morgan and Ken Dalka, had moved on; both helped
+him as he went. He fixed its bugs, added to it, and renamed it XRogue 8.0,
+finishing it on June 8, 1991. His XRogue has over 200 monsters, many clever
+enough to avoid traps and to judge when to fight and when to run, and
+commands found in no earlier Rogue. He played it hard, too: that May he
+told Usenet that beyond level 40 the monsters were almost too strong, and
+that he turned to the Daggers of Musty Doit and a wand of disintegration.
+In June 1996 he sent me the source code, and his encouragement led to the
+restoration project.
 
 <div class="callout">
 <p>XRogue is next in line for Redux, and its new work is coming to GitHub soon.</p>
 </div>
 
-## Downloads
+## Guide
 
-- [XRogue 8.0.3 Linux Binary](http://rogue.rogueforge.net/files/xrogue/xrogue8.0.3-linux.tar.gz)
-- [XRogue 8.0.3 DJGPP Binary (DOS)](http://rogue.rogueforge.net/files/xrogue/xrogue8.0.3-djgpp.zip)
-- [XRogue 8.0.3 Win32 Binary (Windows)](http://rogue.rogueforge.net/files/xrogue/xrogue8.0.3-win32.zip)
-- [XRogue 8.0.3 AIX Binary](http://rogue.rogueforge.net/files/xrogue/xrogue8.0.3-aix.tar.gz)
-- [XRogue 8.0.3 Source Code](http://rogue.rogueforge.net/files/xrogue/xrogue8.0.3-src.tar.gz)
-- [A Guide to XRogue](../docs/xrogue-guide.md)
+[A Guide to XRogue](../docs/xrogue-guide.md), Robert's own guide to the game.
 
 ## Repository
 

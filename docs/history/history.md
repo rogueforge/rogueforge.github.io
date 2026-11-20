@@ -73,7 +73,10 @@ Each fork borrowed from the ones before it.
 <li class="ev ev--written"><a href="../games/advanced-rogue-7-7/">Advanced Rogue 7.7</a>, the last of the line. AT&amp;T sells Advanced Rogue through its Toolchest for a time.</li>
 </ul></li>
 <li><span class="t-year">1989</span><ul>
-<li class="ev ev--written">Robert Pietkivitch begins <a href="../games/xrogue-8-0/">XRogue</a> for the AT&amp;T UNIX PC, from Advanced Rogue 7.7, and works on it until 1991.</li>
+<li class="ev ev--written">Robert Pietkivitch begins <a href="../games/xrogue-8-0/">XRogue</a> for the AT&amp;T UNIX PC, from Advanced Rogue 7.7.</li>
+</ul></li>
+<li><span class="t-year">1991</span><ul>
+<li class="ev ev--written">XRogue 8.0 is finished on 8 June.</li>
 </ul></li>
 </ol>
 
@@ -93,7 +96,7 @@ Each fork borrowed from the ones before it.
 </ul></li>
 <li><span class="t-year">2002</span><ul>
 <li class="ev ev--restored">Ken Arnold publishes his Rogue 5.4 source on SourceForge.</li>
-<li class="ev ev--restored">In memory of Robert Pietkivitch, who passed away on 3 December.</li>
+<li class="ev ev--restored">In memory of Robert Pietkivitch, who passed away on 3 December. He will be missed.</li>
 </ul></li>
 <li><span class="t-year">2004</span><ul>
 <li class="ev ev--restored">Robert Kindelberger provides the long-lost Super-Rogue 9.0 source. rogueforge.net goes live.</li>

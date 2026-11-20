@@ -473,7 +473,8 @@ def main() -> int:
                 page_output = output_dir / g_slug / "index.html"
             meta = metas[key]
             dek = (f'<p class="page-head__dek">{escape(meta["summary"])}</p>'
-                   if meta.get("summary") and meta.get("hide_summary") != "true" else "")
+                   if meta.get("summary") and meta.get("hide_summary") != "true"
+                   and g_slug != "games" else "")
             main_html = render_template("doc.html", {
                 "group_href": ("../" if group.get("single") else
                                relative_href(page_output, output_dir / g_slug / "index.html")),
