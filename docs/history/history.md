@@ -158,7 +158,7 @@ Starting over from the binaries, with Claude. The [Redux](../story/) chapters te
 <li class="ev ev--restored">The PDP-11 and VAX tools become <a href="../story/toolchains/">pdp11-xdev and vax11-xdev</a>, toolchains and simulators for every Unix of their machines.</li>
 </ul></li>
 <li class="t-redux"><span class="t-year">Nov</span><ul>
-<li class="ev ev--restored">Claude Fable 5.2 and Opus 5.5 get the stuck Linux ports moving; all six Berkeley versions are ported in a week. Rog-O-Matic plays again, with a runner for unattended games. PC Rogue is next.</li>
+<li class="ev ev--restored">Claude Fable 5.2 and Opus 5.5 get the stuck Linux ports moving; all six Berkeley versions are ported in a week. Rog-O-Matic plays again, with a runner for unattended games, and XRogue follows. PC Rogue is next.</li>
 </ul></li>
 </ol>
 

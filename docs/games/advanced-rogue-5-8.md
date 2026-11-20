@@ -2,7 +2,7 @@
 short: Advanced Rogue 5.8
 year: 1984–86
 machine: Unix
-status: port
+status: soon
 summary: The Bell Labs Advanced Rogue, built on Rogue 3.6 with ideas from Super-Rogue. Restored 2005–2006.
 origin: Source found on the internet
 verified: Restored 2006 (5.8.2); not yet rebuilt from a binary
@@ -19,13 +19,9 @@ additions from Super-Rogue. The source code was found floating on the
 internet. (A slightly enhanced version was also found — dubbed 5.8e — and
 is ported separately.)
 
-## Downloads
+## Guide
 
-- [Advanced Rogue 5.8.2 Linux Binary](http://rogue.rogueforge.net/files/arogue5.8/arogue5.8.2-linux.tar.gz)
-- [Advanced Rogue 5.8.2 Windows Console Binary](http://rogue.rogueforge.net/files/arogue5.8/arogue5.8.2-win32.zip)
-- [Advanced Rogue 5.8.2 DOS Binary (DJGPP)](http://rogue.rogueforge.net/files/arogue5.8/arogue5.8.2-djgpp.zip)
-- [Advanced Rogue 5.8.2 Source Code](http://rogue.rogueforge.net/files/arogue5.8/arogue5.8.2-src.tar.gz)
-- [The guide to Advanced Rogue 5.8](../docs/advanced-rogue-5-8-guide.md)
+[The guide to Advanced Rogue 5.8](../docs/advanced-rogue-5-8-guide.md).
 
 ## Repository
 

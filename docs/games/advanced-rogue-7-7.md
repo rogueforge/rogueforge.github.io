@@ -2,7 +2,7 @@
 short: Advanced Rogue 7.7
 year: 1986
 machine: Unix
-status: port
+status: soon
 summary: The last Advanced Rogue, and the base for XRogue. Restored 2006.
 origin: Source found on the internet
 verified: Restored 2006 (7.7.1); not yet rebuilt from a binary
@@ -18,13 +18,9 @@ Advanced Rogue 7.7 is based on the Rogue 3.6 source code with some
 additions from Super-Rogue. The source code was found floating on the
 internet.
 
-## Downloads
+## Guide
 
-- [Advanced Rogue 7.7.1 Linux Binary](http://rogue.rogueforge.net/files/arogue7.7/arogue7.7.1-linux.tar.gz)
-- [Advanced Rogue 7.7.1 Windows Console Binary](http://rogue.rogueforge.net/files/arogue7.7/arogue7.7.1-win32.zip)
-- [Advanced Rogue 7.7.1 DOS Binary (DJGPP)](http://rogue.rogueforge.net/files/arogue7.7/arogue7.7.1-djgpp.zip)
-- [Advanced Rogue 7.7.1 Source Code](http://rogue.rogueforge.net/files/arogue7.7/arogue7.7.1-src.tar.gz)
-- [The guide to Advanced Rogue 7.7](../docs/advanced-rogue-7-7-guide.md)
+[The guide to Advanced Rogue 7.7](../docs/advanced-rogue-7-7-guide.md).
 
 ## Repository
 

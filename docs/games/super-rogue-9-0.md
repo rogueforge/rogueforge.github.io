@@ -2,7 +2,7 @@
 short: Super-Rogue 9.0
 year: 1983–84
 machine: Unix
-status: port
+status: soon
 summary: Robert Kindelberger's expansion of Rogue 3.6 at Bell Labs, restored from his source in 2005.
 released: Circa May 1983 to July 1984
 origin: Source from Robert D. Kindelberger, 2004
@@ -22,15 +22,6 @@ provided the long-elusive source code in 2004.
 The restoration of this version requires the standard updates for using
 gcc / ANSI-style C compilers, fixes for some bugs inherited from Rogue 3.6,
 and new save/restore code.
-
-## Downloads
-
-- [Super-Rogue 9.0-1 Linux Binary](http://rogue.rogueforge.net/files/srogue/srogue9.0-1-linux.tar.gz)
-- [Super-Rogue 9.0-1 Cygwin Binary (Windows)](http://rogue.rogueforge.net/files/srogue/srogue9.0-1-cygwin.tar.gz)
-- [Super-Rogue 9.0-1 SFU/Interix Binary (Windows)](http://rogue.rogueforge.net/files/srogue/srogue9.0-1-interix.tar.gz)
-- [Super-Rogue 9.0-1 DJGPP Binary (DOS/Windows)](http://rogue.rogueforge.net/files/srogue/srogue9.0-1-djgpp.zip)
-- [Super-Rogue 9.0-1 AIX Binary](http://rogue.rogueforge.net/files/srogue/srogue9.0-1-aix.tar.gz)
-- [Super-Rogue 9.0-1 Source Code](http://rogue.rogueforge.net/files/srogue/srogue9.0-1-src.tar.gz)
 
 ## Repository
 

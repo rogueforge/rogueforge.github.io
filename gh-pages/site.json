@@ -29,7 +29,7 @@
       "slug": "games",
       "title": "Every version",
       "nav_label": "Versions",
-      "summary": "Six versions of Rogue were rebuilt from their original binaries in 2026, and PC Rogue and XRogue are coming soon. The rest are restorations from their authors' source, made between 1992 and 2006, and still waiting for the same treatment.",
+      "summary": "Six versions of Rogue were rebuilt from their original binaries in 2026, and PC Rogue, Super-Rogue, Advanced Rogue and UltraRogue are coming soon. The rest are restorations from their authors' source, made between 1992 and 2006, and still waiting for the same treatment.",
       "families": [
         {
           "label": "Rogue at Berkeley",
@@ -103,7 +103,7 @@
   "map": {
     "message": "Hello, welcome to the Dungeons of Doom",
     "status": "Level: 1  Versions: {versions}  Redux: {redux}  Hp: 12(12)  Str: 16(16)  Arm: 4",
-    "caption": "<p class=\"for-wide\">Each room is a version, joined by a corridor to the one it grew from; the pale corridor marks work that PC Rogue and Rogue 5.3 shared. Rog-O-Matic stands alone: it plays Rogue rather than descending from it. <span class=\"legend\"><span class=\"status status--rebuilt\">Lit rooms</span></span> have been published in their Redux form, <span class=\"legend\"><span class=\"status status--soon\">lavender rooms</span></span> are coming soon, and <span class=\"legend\"><span class=\"status status--port\">dark rooms</span></span> are still to come. Choose a room to read about it.</p><p class=\"for-narrow\">The versions of Rogue published in their Redux form, each joined to the one it grew from. Choose a room to read about it, or see every version below.</p>",
+    "caption": "<p class=\"for-wide\">Each room is a version, joined by a corridor to the one it grew from; the pale corridor marks work that PC Rogue and Rogue 5.3 shared. Rog-O-Matic stands alone: it plays Rogue rather than descending from it. <span class=\"legend\"><span class=\"status status--rebuilt\">Lit rooms</span></span> have been published in their Redux form, and <span class=\"legend\"><span class=\"status status--soon\">lavender rooms</span></span> are coming soon. Choose a room to read about it.</p><p class=\"for-narrow\">The versions of Rogue published in their Redux form, each joined to the one it grew from. Choose a room to read about it, or see every version below.</p>",
     "wide": {
       "width": 80,
       "height": 23,
@@ -119,7 +119,7 @@
           "w": 16,
           "h": 5,
           "label": "Rogue 3.4",
-          "sub": "PDP-11, 1981",
+          "sub": "1981",
           "href": "games/rogue-3-4",
           "lit": true,
           "step": 1,
@@ -138,7 +138,7 @@
           "w": 17,
           "h": 5,
           "label": "Rogue 3.6",
-          "sub": "VAX, 1981",
+          "sub": "1981",
           "href": "games/rogue-3-6",
           "lit": true,
           "step": 3,
@@ -157,7 +157,7 @@
           "w": 16,
           "h": 5,
           "label": "Rogue 4.22",
-          "sub": "VAX, 1982",
+          "sub": "1982",
           "href": "games/rogue-4-22",
           "lit": true,
           "step": 5,
@@ -176,7 +176,7 @@
           "w": 17,
           "h": 5,
           "label": "Rogue 5.2",
-          "sub": "VAX, 1982",
+          "sub": "1982",
           "href": "games/rogue-5-2",
           "lit": true,
           "step": 7,
@@ -195,7 +195,7 @@
           "w": 16,
           "h": 5,
           "label": "Rogue 5.3",
-          "sub": "VAX, 1983",
+          "sub": "1983",
           "href": "games/rogue-5-3",
           "lit": true,
           "step": 9,
@@ -214,7 +214,7 @@
           "w": 14,
           "h": 5,
           "label": "Rogue 5.4",
-          "sub": "VAX, 1985",
+          "sub": "1985",
           "href": "games/rogue-5-4",
           "lit": true,
           "step": 11,
@@ -234,7 +234,10 @@
           "h": 5,
           "label": "Super-Rogue",
           "sub": "1982-84",
-          "href": "games/super-rogue-9-0"
+          "href": "games/super-rogue-9-0",
+          "soon": true,
+          "step": 15,
+          "sticker": "Coming soon"
         },
         {
           "id": "ar58",
@@ -244,7 +247,10 @@
           "h": 5,
           "label": "Adv. Rogue 5.8",
           "sub": "1984-86",
-          "href": "games/advanced-rogue-5-8"
+          "href": "games/advanced-rogue-5-8",
+          "soon": true,
+          "step": 16,
+          "sticker": "Coming soon"
         },
         {
           "id": "urog",
@@ -254,7 +260,10 @@
           "h": 5,
           "label": "UltraRogue",
           "sub": "1985-86",
-          "href": "games/ultrarogue-1-07"
+          "href": "games/ultrarogue-1-07",
+          "soon": true,
+          "step": 17,
+          "sticker": "Coming soon"
         },
         {
           "id": "ar77",
@@ -264,7 +273,10 @@
           "h": 5,
           "label": "Adv. Rogue 7.7",
           "sub": "1984-86",
-          "href": "games/advanced-rogue-7-7"
+          "href": "games/advanced-rogue-7-7",
+          "soon": true,
+          "step": 18,
+          "sticker": "Coming soon"
         },
         {
           "id": "xrog",
@@ -273,11 +285,10 @@
           "w": 14,
           "h": 5,
           "label": "XRogue",
-          "sub": "1989-91",
+          "sub": "1991",
           "href": "games/xrogue-8-0",
-          "soon": true,
-          "step": 14,
-          "sticker": "Coming soon"
+          "lit": true,
+          "step": 14
         },
         {
           "id": "pc",
@@ -286,7 +297,7 @@
           "w": 17,
           "h": 5,
           "label": "PC Rogue 1.48",
-          "sub": "IBM PC, 1983",
+          "sub": "1983",
           "href": "games/pc-rogue-1-48",
           "soon": true,
           "step": 12,
@@ -524,7 +535,7 @@
           "w": 17,
           "h": 6,
           "label": "Rogue 3.4",
-          "sub": "PDP-11, 1981",
+          "sub": "1981",
           "href": "games/rogue-3-4",
           "lit": true,
           "step": 1,
@@ -543,7 +554,7 @@
           "w": 17,
           "h": 6,
           "label": "Rogue 3.6",
-          "sub": "VAX, 1981",
+          "sub": "1981",
           "href": "games/rogue-3-6",
           "lit": true,
           "step": 3,
@@ -562,7 +573,7 @@
           "w": 17,
           "h": 6,
           "label": "Rogue 4.22",
-          "sub": "VAX, 1982",
+          "sub": "1982",
           "href": "games/rogue-4-22",
           "lit": true,
           "step": 5,
@@ -581,7 +592,7 @@
           "w": 17,
           "h": 6,
           "label": "Rogue 5.2",
-          "sub": "VAX, 1982",
+          "sub": "1982",
           "href": "games/rogue-5-2",
           "lit": true,
           "step": 7,
@@ -600,7 +611,7 @@
           "w": 17,
           "h": 6,
           "label": "Rogue 5.3",
-          "sub": "VAX, 1983",
+          "sub": "1983",
           "href": "games/rogue-5-3",
           "lit": true,
           "step": 9,
@@ -619,7 +630,7 @@
           "w": 17,
           "h": 6,
           "label": "Rogue 5.4",
-          "sub": "VAX, 1985",
+          "sub": "1985",
           "href": "games/rogue-5-4",
           "lit": true,
           "step": 11,

@@ -2,7 +2,7 @@
 short: XRogue 8.0
 year: 1989–91
 machine: AT&T UNIX PC
-status: soon
+status: port
 summary: Robert Pietkivitch's continuation of Advanced Rogue 7.7, restored with him from 1996.
 origin: Source from Robert Pietkivitch, 1996
 verified: Restored (8.0.3); not yet rebuilt from a binary
@@ -30,17 +30,20 @@ that he turned to the Daggers of Musty Doit and a wand of disintegration.
 In June 1996 he sent me the source code, and his encouragement led to the
 restoration project.
 
-<div class="callout">
-<p>XRogue is next in line for Redux, and its new work is coming to GitHub soon.</p>
-</div>
-
 ## Guide
 
 [A Guide to XRogue](../docs/xrogue-guide.md), Robert's own guide to the game.
 
 ## Repository
 
-<https://github.com/rogueforge/xrogue8.0>
+<https://github.com/rogueforge/xrogue8.0>, with a branch for each line of
+work:
+
+- `master`: the port to Linux and modern BSD, with bug fixes.
+- `restored`: Robert's 1996 source, with the fixes it needs to build on
+  4.3BSD.
+- `oldmaster`: the earlier restoration and its releases, with the Windows
+  and DOS ports.
 
 ## Release history
 

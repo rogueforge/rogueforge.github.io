@@ -2,7 +2,7 @@
 short: UltraRogue 1.0.7
 year: 1985–86
 machine: Unix
-status: port
+status: soon
 summary: Herb Chong's descendant of Advanced Rogue, and RogueForge's first restoration.
 origin: Source from Herb Chong, 1992
 verified: Restored 1992–2005; not yet rebuilt from a binary
@@ -23,15 +23,6 @@ I picked it up again when the SourceForge project began in 2000.
 This is a **semi-active version** of Rogue rather than a pure restoration.
 Changes to gameplay and other cosmetic changes have occurred and will
 continue to occur.
-
-## Downloads
-
-- [UltraRogue 1.0.7 Linux Binary](http://rogue.rogueforge.net/files/urogue/urogue1.0.7-linux.tar.gz)
-- [UltraRogue 1.0.7 Cygwin Binary (Windows)](http://rogue.rogueforge.net/files/urogue/urogue1.0.7-cygwin.tar.gz)
-- [UltraRogue 1.0.7 SFU/Interix Binary (Windows)](http://rogue.rogueforge.net/files/urogue/urogue1.0.7-interix.tar.gz)
-- [UltraRogue 1.0.7 DJGPP Binary (DOS/Windows)](http://rogue.rogueforge.net/files/urogue/urogue1.0.7-djgpp.zip)
-- [UltraRogue 1.0.7 AIX Binary](http://rogue.rogueforge.net/files/urogue/urogue1.0.7-aix.tar.gz)
-- [UltraRogue 1.0.7 Source Code](http://rogue.rogueforge.net/files/urogue/urogue1.0.7-src.tar.gz)
 
 ## Repository
 
