@@ -1,6 +1,6 @@
 ---
 title: Advanced Rogue 7.7: The Dungeons of Doom
-summary: The player's guide to Advanced Rogue 7.7, the last of the Bell Labs line.
+summary: Michael Morgan and Ken Dalka's guide to Advanced Rogue 7.7, the last of the Bell Labs line.
 ---
 # Advanced Rogue 7.7: The Dungeons of Doom
 

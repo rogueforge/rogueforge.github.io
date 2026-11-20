@@ -65,6 +65,6 @@ edition from 1982. The 1981 text survives only as formatted output,
 `rogue.doc`. Its source has been rebuilt, using the Version 7 `tbl`,
 `nroff` and `col`, until it formats to exactly that file.
 
-The timestamps tell their own story. The Rogue 3.4 binary was linked at
+The timestamps tell their own story. The Rogue 3.4 binary was built at
 04:41:44 on 21 May 1981, and that copy of the Guide was formatted at
 04:41:57, thirteen seconds later.

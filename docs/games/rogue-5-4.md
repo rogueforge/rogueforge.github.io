@@ -8,7 +8,7 @@ released: Version string "rogue 31/03/85"; in the 4.3BSD tree, 1986
 origin: 4.3BSD, /usr/src/games/rogue/main.obj (CSRG Archive, Disc 1)
 toolchain: CSRG VAX C compiler as of early 1985
 verified: Identical after stripping, with two small post-compile patches
-repo: rogue5.4-19860109-bsd43, rogue5.4
+repo: rogue5.4
 ---
 # Rogue 5.4
 
@@ -86,11 +86,42 @@ CSRG Archive, Disc 1, directory 2.10:
   [rogue.tar.gz](http://rogue.rogueforge.net/files/rogue5.4/rogue.tar.gz),
   1 October 2013.
 
-## Repositories
+## Repository
 
-- <https://github.com/rogueforge/rogue5.4-19860109-bsd43>: the 2026
-  rebuild of `main.obj`.
-- <https://github.com/rogueforge/rogue5.4-19840331-bsd42>: Ken Arnold's
-  later source, back-ported to the C of the period to show what it
-  might have looked like. It is not verified against any binary.
-- <https://github.com/rogueforge/rogue5.4>: the earlier restoration.
+<https://github.com/rogueforge/rogue5.4>, with a branch for each line of
+work:
+
+- `restored-bsd43-19860109`: the 2026 rebuild of `main.obj` from 4.3BSD.
+- `restored-bsd42-19840331`: Ken Arnold's later source, back-ported to the
+  C of the period to show what it might have looked like. It is not
+  verified against any binary.
+- `linux`: the Linux port, with bug fixes.
+- `oldmaster`: the earlier restoration and its 5.4.x releases.
+
+## Release history
+
+Releases of the earlier restoration. Each has a [GitHub release](https://github.com/rogueforge/rogue5.4/releases)
+with its changelog, from Ken Arnold's [Rogue 5.4](https://github.com/rogueforge/rogue5.4/releases/tag/v5.4) source onward.
+
+### August 24, 2008 — [5.4.5](https://github.com/rogueforge/rogue5.4/releases/tag/v5.4.5)
+
+The last release of the earlier restoration.
+
+### September 5, 2007 — [5.4.4](https://github.com/rogueforge/rogue5.4/releases/tag/v5.4.4)
+
+Save and restore fixed; a crash when calling a weapon fixed; autoconf
+files in the source tarball; an RPM spec and desktop files contributed by
+Wart; a port to Mac OS X.
+
+### July 23, 2007 — [5.4.3](https://github.com/rogueforge/rogue5.4/releases/tag/v5.4.3)
+
+Fixes to wielding and wearing; an autoconf build; issues raised by Fedora
+packagers addressed.
+
+### January 29, 2006 — [5.4.2](https://github.com/rogueforge/rogue5.4/releases/tag/v5.4.2)
+
+Save and restore fixed, and keypad and cursor key support added.
+
+### January 4, 2006 — [5.4.1](https://github.com/rogueforge/rogue5.4/releases/tag/v5.4.1)
+
+The first release.

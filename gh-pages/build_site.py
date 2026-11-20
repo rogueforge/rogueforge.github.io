@@ -386,7 +386,7 @@ def main() -> int:
             "topnav": build_topnav(groups, current_output, output_dir,
                                    github_href, current_group),
             "github_href": escape(github_href),
-            "contact_email": escape(config.get("contact_email", "")),
+            "discussions_href": escape(config.get("discussions_href", "#")),
             "legacy_href": escape(config.get("legacy_href", "")),
             "body_class": body_class,
             "main": main_html,
@@ -404,6 +404,7 @@ def main() -> int:
         "versions": str(len(game_metas)),
         "rebuilt": str(sum(m.get("status") == "rebuilt" for m in game_metas)),
         "ported": str(sum(m.get("status") == "port" for m in game_metas)),
+        "redux": str(sum(1 for r in config["map"]["wide"]["rooms"] if r.get("lit"))),
     }
 
     def page_href(target: str) -> str:
@@ -472,7 +473,7 @@ def main() -> int:
                 page_output = output_dir / g_slug / "index.html"
             meta = metas[key]
             dek = (f'<p class="page-head__dek">{escape(meta["summary"])}</p>'
-                   if meta.get("summary") else "")
+                   if meta.get("summary") and meta.get("hide_summary") != "true" else "")
             main_html = render_template("doc.html", {
                 "group_href": ("../" if group.get("single") else
                                relative_href(page_output, output_dir / g_slug / "index.html")),

@@ -1,20 +1,24 @@
 ---
 short: PC Rogue 1.48
-year: 1983–85
+year: 1983–86
 machine: IBM PC
 status: soon
 summary: The IBM PC Rogue that Epyx sold. It grew from Berkeley's Rogue 5.2, and shares part of its work with Rogue 5.3.
-released: Beta 1983; version 1.48 dated 30 December 1985
+released: A.I. Design 1983; Epyx 1.45 to 1.49, 1985–86 (1.48 source dated 30 December 1985)
 origin: A.I. Design source for version 1.48
 toolchain: Lattice C, then Microsoft C, for MS-DOS
 verified: Source ported to 4.3BSD in 2026; the DOS binaries are not yet rebuilt
 ---
 # PC Rogue 1.48
 
-Rogue came to the IBM PC through A.I. Design, with Jon Lane adapting it,
-and Epyx sold it from 1985. For many people it was the first Rogue they
-played: the PC's own line-drawing characters, a title screen, and copy
-protection.
+Rogue came to the IBM PC through A.I. Design, short for Artificial
+Intelligence Design, a small company in Santa Clara, California. Michael
+Toy met Jon Lane at Olivetti, where Lane suggested a commercial version
+for the IBM PC. Lane adapted the game with Mel Sibony, who also made its
+international versions. A.I. Design published PC Rogue itself in 1983;
+Epyx took it on as publisher in 1984 and sold it from 1985. For
+many people it was the first Rogue they played: the PC's own
+line-drawing characters, a title screen, and copy protection.
 
 The source of version 1.48, dated 30 December 1985, survives in three
 copies. The oldest has its original 1984–85 file dates and K&R style; the
@@ -38,20 +42,20 @@ where Berkeley has a black unicorn, and "kestral" where Berkeley spells
 it "kestrel". The PC's earliest surviving build, a 1983 beta, already
 has the new monsters.
 
-So the two lines shared some of their work and not the rest. See
-[How the versions are related](../../history/#how-the-versions-are-related) for the
-evidence.
+So the two lines shared some of their work and not the rest.
 
 ## The DOS releases
 
-Four builds of the DOS game have been compared:
+Four builds of the DOS game have been compared, alongside the 1.48
+source:
 
-| Build | Compiler | Credits |
-|---|---|---|
-| ".1" beta | Lattice C 1.00 | (C) 1983 Artificial Intelligence Design Systems |
-| 1.1 | Lattice C 1.02 | Public domain, 1984, "not to be sold" |
-| 1.45 | Microsoft C | (C) 1985 Epyx |
-| 1.49 | Microsoft C | (C) 1985 Epyx |
+| Build | Date | From | Compiler | Credits |
+|---|---|---|---|---|
+| ".1" beta | 1983 | A.I. Design | Lattice C 1.00 | (C) 1983 Artificial Intelligence Design Systems |
+| 1.1 | — | A.I. Design | Lattice C 1.02 | Altered by a crack in the surviving copy |
+| 1.45 | 1985 | Epyx | Microsoft C | (C) 1985 Epyx |
+| 1.48 | 30 December 1985 | A.I. Design, for Epyx | Microsoft C | Source only |
+| 1.49 | 1986 (copy dated 30 May) | Epyx | Microsoft C | (C) 1985 Epyx |
 
 The credits change as the game moved from A.I. Design to Epyx. The 1983
 beta says Rogue "was originated by Michael C. Toy and Kenneth C.R.C.
@@ -61,6 +65,27 @@ Michael Toy and Glenn Wichman; various implementations by Ken Arnold,
 Jon Lane and Michael Toy; adapted for the IBM PC by A.I. Design". The
 builds also carry the programmers' own marks: "Mr. Mctesq was here",
 "jll was here", and in the beta, "You Rang -- Dick Brain".
+
+## What the source says
+
+The 1.48 source keeps A.I. Design's own version stamps, from February
+1984 to December 1985, and Michael Toy's signature on its replacement
+`printf`: "Michael Toy, AI Design, January 1984". The copyright in
+`main.c` belongs to "Mel Sibony, Jon Lane (AI Design update for the
+IBMPC)", 1983.
+
+Its title screen credits "Adapted for the IBM PC by A.I. Design,
+(C)Copyright 1985 Epyx Incorporated"; built for the international
+versions, it names Mel Sibony instead, with the copyright to AI Design.
+The shareware demo ends by telling you to write to A.I. Design at
+P.O. Box 3685, Santa Clara, California, if you want to do some more
+exploring in the Dungeons of Doom.
+
+A few other things show the company at work. The function that loads
+Epyx's title picture is called `epyx_yuck()`. And the tombstone prints
+its name and killer from two strings that start out as "Software Pirate"
+and "Copy Protection Mafia", and it seems the copy protection swaps
+them for your own name and killer on a genuine disk.
 
 ## The 2026 port
 

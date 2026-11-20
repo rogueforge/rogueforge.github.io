@@ -8,7 +8,7 @@ released: 2 August 1983
 origin: 4.2BSD, distmod.obj and /usr/games/rogue (CSRG Archive, Disc 1)
 toolchain: 4.2BSD VAX C compiler
 verified: Byte-identical, 13 July 2026
-repo: rogue5.3-19830802-bsd42
+repo: rogue5.3
 ---
 # Rogue 5.3
 
@@ -34,4 +34,5 @@ outlives its function.
 
 ## Repository
 
-<https://github.com/rogueforge/rogue5.3-19830802-bsd42>
+<https://github.com/rogueforge/rogue5.3>. The `restored` branch and the
+`19830802-bsd42` tag hold the rebuild of the 4.2BSD binary of 2 August 1983.

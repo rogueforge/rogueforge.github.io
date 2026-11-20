@@ -1,6 +1,6 @@
 ---
 glyph: amulet
-summary: Forty-five years of Rogue, from a game written at Santa Cruz in 1980 to the rebuilds of 2026, and how the versions are related.
+summary: Forty-five years of Rogue, from a game written at Santa Cruz in 1980 to the rebuilds of 2026.
 ---
 # History
 
@@ -10,42 +10,74 @@ summary: Forty-five years of Rogue, from a game written at Santa Cruz in 1980 to
 <span class="status status--rebuilt">A version is rebuilt from its binary</span>
 </div>
 
-## Writing Rogue, 1980–1992
+## Writing Rogue, 1980–1989
 
 <ol class="timeline">
 <li><span class="t-year">1980</span><ul>
-<li class="ev ev--written">Michael Toy and Glenn Wichman write the first Rogue at UC Santa Cruz.</li>
+<li class="ev ev--written">Michael Toy and Glenn Wichman write the first Rogue at UC Santa Cruz, and it goes through a series of early versions.</li>
 </ul></li>
 <li><span class="t-year">1981</span><ul>
-<li class="ev ev--written"><a href="../games/rogue-3-4/">Rogue 3.4</a> is linked for the PDP-11 on 21 May, and turns up in 2.8BSD.</li>
+<li class="ev ev--written">Michael Toy moves to UC Berkeley, and Ken Arnold joins the team.</li>
+<li class="ev ev--written"><a href="../games/rogue-3-4/">Rogue 3.4</a> is built for the PDP-11 on 21 May and turns up in 2.8BSD: the earliest version that survives with a number and a date.</li>
 <li class="ev ev--written"><a href="../games/rogue-3-6/">Rogue 3.6</a> goes out with 4.1BSD for the VAX, and later 2.9BSD for the PDP-11. Copies spread to sites everywhere.</li>
+<li class="ev ev--written">At Carnegie Mellon, Andrew Appel, Leonard Hamey, Guy Jacobson and Michael Mauldin begin <a href="../games/rogomatic/">Rog-O-Matic</a>, a program that plays Rogue.</li>
 </ul></li>
 <li><span class="t-year">1982</span><ul>
-<li class="ev ev--written"><a href="../games/rogue-4-22/">Rogue 4.22</a> in March, then <a href="../games/rogue-5-2/">Rogue 5.2</a>, the start of the 5.x line, at Berkeley with Ken Arnold.</li>
-<li class="ev ev--written"><a href="../games/super-rogue-9-0/">Super-Rogue</a> grows out of Rogue 3.6 at Bell Labs, with Robert Kindelberger, through 1984.</li>
+<li class="ev ev--written"><a href="../games/rogue-4-22/">Rogue 4.22</a> is built at Berkeley on 13 March, and turns up in 4.1aBSD.</li>
+<li class="ev ev--written"><a href="../games/rogue-5-2/">Rogue 5.2</a>, the start of the 5.x line, is built at Berkeley with Ken Arnold on 20 July, and goes out on the last 4.1BSD tape.</li>
 </ul></li>
 <li><span class="t-year">1983</span><ul>
-<li class="ev ev--written"><a href="../games/pc-rogue-1-48/">PC Rogue</a>'s first beta from A.I. Design, grown from Rogue 5.2, with a new set of monsters.</li>
+<li class="ev ev--written">Michael Toy and Jon Lane, who met at Olivetti, found A.I. Design in Santa Clara, and Lane and Mel Sibony adapt Rogue for the IBM PC. A.I. Design publishes <a href="../games/pc-rogue-1-48/">PC Rogue</a>, grown from Rogue 5.2, with a new set of monsters.</li>
 <li class="ev ev--written"><a href="../games/rogue-5-3/">Rogue 5.3</a> in August, found in 4.2BSD, with the same new monsters.</li>
 </ul></li>
 <li><span class="t-year">1984</span><ul>
-<li class="ev ev--written"><a href="../games/advanced-rogue-5-8/">Advanced Rogue</a> begins at AT&amp;T, built on Rogue 3.6 with ideas from Super-Rogue.</li>
-<li class="ev ev--written"><a href="../games/rogomatic/">Rog-O-Matic</a>, from Carnegie Mellon, plays Rogue better than most people.</li>
+<li class="ev ev--written">Epyx, through Robert Borch, takes Rogue on as its publisher, and pays A.I. Design to port it to other computers.</li>
 </ul></li>
 <li><span class="t-year">1985</span><ul>
 <li class="ev ev--written"><a href="../games/rogue-5-4/">Rogue 5.4</a>, its version string dated 31 March, later found with 4.3BSD.</li>
-<li class="ev ev--written">Epyx sells PC Rogue; version 1.48 is dated 30 December.</li>
-<li class="ev ev--written">Herb Chong writes <a href="../games/ultrarogue-1-07/">UltraRogue</a>, from an early Advanced Rogue, through 1986.</li>
+<li class="ev ev--written">Rog-O-Matic XIV is posted to comp.sources.unix in March, and wins at Rogue 3.6, 5.2 and 5.3.</li>
+<li class="ev ev--written">Rogue for the Apple Macintosh, led by Michael Toy with Jon Lane, and with graphics by Glenn Wichman.</li>
 </ul></li>
 <li><span class="t-year">1986</span><ul>
-<li class="ev ev--written"><a href="../games/advanced-rogue-7-7/">Advanced Rogue 7.7</a>, the last of the line.</li>
+<li class="ev ev--written">Epyx brings Rogue to the Atari ST and the Amiga, ported by Glenn Wichman and Michael Toy, and to the Tandy Color Computer 3.</li>
+</ul></li>
+<li><span class="t-year">1988</span><ul>
+<li class="ev ev--written">Mastertronic brings Rogue to 8-bit home computers such as the Commodore 64 and ZX Spectrum, under licence from Epyx.</li>
 </ul></li>
 <li><span class="t-year">1989</span><ul>
-<li class="ev ev--written">Robert Pietkivitch begins <a href="../games/xrogue-8-0/">XRogue</a> for the AT&amp;T UNIX PC, from Advanced Rogue 7.7, through 1992.</li>
+<li class="ev ev--written">Epyx goes bankrupt.</li>
 </ul></li>
 </ol>
 
-## Keeping it alive, 1992–2026
+## The forks, 1982–1991
+
+Rogue 3.6 was the version everyone had, so when people away from
+Berkeley set out to make a bigger Rogue, that is where they started.
+Each fork borrowed from the ones before it.
+
+<ol class="timeline">
+<li><span class="t-year">1982</span><ul>
+<li class="ev ev--written"><a href="../games/super-rogue-9-0/">Super-Rogue</a> grows out of Rogue 3.6 at AT&amp;T Bell Labs, with Robert Kindelberger as the public face of the group. Versions 6.5, 7.2, 8.0 and 8.3 go round among friends.</li>
+</ul></li>
+<li><span class="t-year">1983</span><ul>
+<li class="ev ev--written">Super-Rogue 9.0, the last version, is worked on from about May 1983 to July 1984.</li>
+</ul></li>
+<li><span class="t-year">1984</span><ul>
+<li class="ev ev--written"><a href="../games/advanced-rogue-5-8/">Advanced Rogue</a> begins at Bell Labs, built on Rogue 3.6 with ideas from Super-Rogue. Michael Morgan and Ken Dalka are among its authors.</li>
+</ul></li>
+<li><span class="t-year">1985</span><ul>
+<li class="ev ev--written">Herb Chong writes <a href="../games/ultrarogue-1-07/">UltraRogue</a>, from Rogue 3.6 and an early Advanced Rogue.</li>
+</ul></li>
+<li><span class="t-year">1986</span><ul>
+<li class="ev ev--written">UltraRogue 1.0.3 is dated 13 August, and goes round mostly as a binary.</li>
+<li class="ev ev--written"><a href="../games/advanced-rogue-7-7/">Advanced Rogue 7.7</a>, the last of the line. AT&amp;T sells Advanced Rogue through its Toolchest for a time.</li>
+</ul></li>
+<li><span class="t-year">1989</span><ul>
+<li class="ev ev--written">Robert Pietkivitch begins <a href="../games/xrogue-8-0/">XRogue</a> for the AT&amp;T UNIX PC, from Advanced Rogue 7.7, and works on it until 1991.</li>
+</ul></li>
+</ol>
+
+## Keeping it alive, 1992–2015
 
 <ol class="timeline">
 <li><span class="t-year">1992</span><ul>
@@ -56,105 +88,76 @@ summary: Forty-five years of Rogue, from a game written at Santa Cruz in 1980 to
 </ul></li>
 <li><span class="t-year">2000</span><ul>
 <li class="ev ev--restored">The project opens on SourceForge.</li>
+<li class="ev ev--restored">Rogue 3.6.1 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
+<li class="ev ev--restored">XRogue 8.0.1 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
 </ul></li>
 <li><span class="t-year">2002</span><ul>
 <li class="ev ev--restored">Ken Arnold publishes his Rogue 5.4 source on SourceForge.</li>
-<li class="ev ev--restored">Robert Pietkivitch dies on 3 December, before he could send the XRogue changes he had made since.</li>
+<li class="ev ev--restored">In memory of Robert Pietkivitch, who passed away on 3 December.</li>
 </ul></li>
 <li><span class="t-year">2004</span><ul>
 <li class="ev ev--restored">Robert Kindelberger provides the long-lost Super-Rogue 9.0 source. rogueforge.net goes live.</li>
 </ul></li>
 <li><span class="t-year">2005</span><ul>
-<li class="ev ev--restored">Super-Rogue 9.0-1 and UltraRogue 1.0.7 released.</li>
+<li class="ev ev--restored">Rogue 3.6.2 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
+<li class="ev ev--restored">XRogue 8.0.2 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
+<li class="ev ev--restored">UltraRogue 1.0.7 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
+<li class="ev ev--restored">Rogue 5.2.1 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
+<li class="ev ev--restored">Super-Rogue 9.0-1 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
+<li class="ev ev--restored">Advanced Rogue 5.8.1 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
+<li class="ev ev--restored">XRogue 8.0.3 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
 </ul></li>
 <li><span class="t-year">2006</span><ul>
-<li class="ev ev--restored">Advanced Rogue 5.8.2 and 7.7.1 released.</li>
+<li class="ev ev--restored">Rogue 5.4.1 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
+<li class="ev ev--restored">Rogue 5.4.2 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
+<li class="ev ev--restored">Advanced Rogue 7.7.1 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
+<li class="ev ev--restored">Advanced Rogue 5.8.2 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
+<li class="ev ev--restored">Rogue 3.6.3 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
+<li class="ev ev--restored">Rogue 5.2.2 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
 </ul></li>
-<li class="t-redux"><span class="t-year">2026</span><ul>
-<li class="ev ev--restored">March: <a href="../story/">Redux</a> begins. Ghidra and radare2 are fixed for the PDP-11 and VAX, and every version is decompiled.</li>
-<li class="ev ev--rebuilt">2 April: Rogue 5.4's object file matches, with two small patches. Then the work stalls for seven weeks.</li>
-<li class="ev ev--restored">June: Claude Opus 4.8, then on 12 June Claude Fable 5. The 2.8BSD toolchain and simulator are built, and the stalled problems start to give. Late in June Fable is withdrawn for a while, and the work <a href="../story/models/">waits for it</a>.</li>
-<li class="ev ev--rebuilt">3 July: Rogue 3.4 matches byte for byte, with a rebuilt 2.8BSD toolchain.</li>
-<li class="ev ev--rebuilt">5 July: Rogue 3.6 for the PDP-11. Then, in July, Rogue 3.6 for the VAX and Rogue 4.22.</li>
-<li class="ev ev--rebuilt">13 July: Rogue 5.3, object file and installed game. 19 July: Rogue 5.2.</li>
-<li class="ev ev--restored">August: the PDP-11 and VAX tools become <a href="../story/toolchains/">pdp11-xdev and vax11-xdev</a>, toolchains and simulators for every Unix of their machines.</li>
-<li class="ev ev--restored">November: Claude Fable 5.2 and Opus 5.5 get the stuck Linux ports moving; all six Berkeley versions are ported in a week. PC Rogue and Rog-O-Matic are next.</li>
+<li><span class="t-year">2007</span><ul>
+<li class="ev ev--restored">Rogue 5.4.3 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
+<li class="ev ev--restored">Rogue 5.4.4 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
+</ul></li>
+<li><span class="t-year">2008</span><ul>
+<li class="ev ev--restored">Rogue 5.4.5 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
+<li class="ev ev--restored">Rogue 3.6.4 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
+<li class="ev ev--restored">Rogue 5.2.3 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
+</ul></li>
+<li><span class="t-year">2013</span><ul>
+<li class="ev ev--restored">Glenn Wichman, Michael Toy and Ken Arnold agree to a BSD licence for Rogue.</li>
+</ul></li>
+<li><span class="t-year">2015</span><ul>
+<li class="ev ev--restored">Rogue 3.6.5 released (<abbr title="Rogue Restoration Project">RRP</abbr>)</li>
 </ul></li>
 </ol>
 
-## How the versions are related
+## Redux, 2026
 
-Rogue was worked on at Santa Cruz and Berkeley, at A.I. Design for the
-IBM PC, and at Bell Labs, by people who shared some of their work with
-each other and not the rest. The rebuilt sources show which.
+Starting over from the binaries, with Claude. The [Redux](../story/) chapters tell the story in full.
 
-- **Rogue 3.6 → 4.22 → 5.2** is a straight line.
-- **Rogue 5.3 grew from 5.2**, and **Rogue 5.4 grew from 5.3**.
-- **PC Rogue grew from 5.2**, not from 5.4, though it was sold in the
-  same years as 5.4.
-- **PC Rogue and 5.3 share one batch of work**: a new set of monsters
-  and a few new items. Each side then changed its copy.
-- **Rog-O-Matic** is not part of the family. It plays Rogue; it was
-  distributed to play Rogue 3.6 and 5.2.
-
-### The evidence
-
-Two comparisons, run over the rebuilt source of each Berkeley version
-and the original A.I. Design source of PC Rogue 1.48.
-
-**Function by function.** For every function two versions write
-differently, which one is a third version closer to? Comments, layout
-and local variable names are ignored, so this measures what the code
-does. For the rebuilt versions, that is fixed by the binary.
-
-| Question | First | Second |
-|---|---|---|
-| Is 5.2 closer to 3.6 or to 4.22? | 0 | 131 |
-| Is 5.4 closer to 5.2 or to 5.3? | 4 | 147 |
-| Is PC Rogue closer to 5.2 or to 5.3? | 115 | 12 |
-| Is PC Rogue closer to 4.22 or to 5.2? | 5 | 38 |
-
-**String by string.** Every message, name and prompt, checked for which
-versions have it. For the rebuilt versions these are exactly the strings
-in the surviving binaries.
-
-| Found in | Strings | For example |
-|---|---|---|
-| 5.2 and PC Rogue only | 49 | crossbow, blank paper, "yum, that tasted good" |
-| 5.3, 5.4 and PC Rogue, not 5.2 | 15 | aquator, griffin, jabberwock, quagga, xeroc |
-| 5.3 and 5.4, not PC Rogue | 147 | hallucination, levitation, protect armor |
-| 5.4 only | 52 | "pick something up" |
-| 5.4 and PC Rogue only | 0 | |
-
-### Rogue 5.4 and 5.3
-
-Where 5.2 and 5.3 differ, Rogue 5.4 sides with 5.3 almost every time.
-The exceptions are the score file. Rogue 5.3 reworked how scores were
-kept and listed; in 5.4 the routine that opens the score file is
-identical to 5.2's, and the one that records a score is closer to 5.2's
-than to 5.3's. Rogue 5.4 also adds things neither 5.3 nor PC Rogue
-has: a command to repeat the last command, one to pick things up, and a
-mystery trap.
-
-### What PC Rogue and 5.3 shared
-
-PC Rogue's code is 5.2's. It keeps 5.2's wording, crossbows, potions of
-paralysis and thirst quenching, and scrolls of blank paper, and has none
-of 5.3's new potions and scrolls. Yet it has the new monster list that
-appears at Berkeley in 5.3: the aquator, griffin, ice monster,
-jabberwock, kestrel, medusa, phantom, quagga, rattlesnake, venus flytrap
-and xeroc, along with the scroll of food detection and the poison dart
-trap. A few pieces of code, such as how timed events are kept, are
-written the same way in both.
-
-The lists are not identical. PC Rogue has a **slime** where Berkeley has
-a **snake**, an **ur-vile** where Berkeley has a **black unicorn**, and
-spells the bird "kestral" where Berkeley has "kestrel".
-
-Which side wrote the new monsters first is not settled. Two clues point
-to the PC: its earliest surviving build, a 1983 beta, already has them,
-and Rogue 5.3 dates from August 1983. And "kestrel" reads like a
-correction of "kestral", not the other way round.
+<ol class="timeline">
+<li class="t-redux"><span class="t-year">Mar</span><ul>
+<li class="ev ev--restored"><a href="../story/">Redux</a> begins. Ghidra and radare2 are fixed for the PDP-11 and VAX, and every version is decompiled.</li>
+</ul></li>
+<li class="t-redux"><span class="t-year">Apr</span><ul>
+<li class="ev ev--rebuilt">2 April: Rogue 5.4's object file matches, with two small patches. Then the work stalls for seven weeks.</li>
+</ul></li>
+<li class="t-redux"><span class="t-year">Jun</span><ul>
+<li class="ev ev--restored">Claude Opus 4.8, then on 12 June Claude Fable 5. The 2.8BSD toolchain and simulator are built, and the stalled problems start to give. Late in June Fable is withdrawn for a while, and the work <a href="../story/models/">waits for it</a>.</li>
+</ul></li>
+<li class="t-redux"><span class="t-year">Jul</span><ul>
+<li class="ev ev--rebuilt">3 July: Rogue 3.4 matches byte for byte, with a rebuilt 2.8BSD toolchain.</li>
+<li class="ev ev--rebuilt">5 July: Rogue 3.6 for the PDP-11, then Rogue 3.6 for the VAX and Rogue 4.22.</li>
+<li class="ev ev--rebuilt">13 July: Rogue 5.3, object file and installed game. 19 July: Rogue 5.2.</li>
+</ul></li>
+<li class="t-redux"><span class="t-year">Aug</span><ul>
+<li class="ev ev--restored">The PDP-11 and VAX tools become <a href="../story/toolchains/">pdp11-xdev and vax11-xdev</a>, toolchains and simulators for every Unix of their machines.</li>
+</ul></li>
+<li class="t-redux"><span class="t-year">Nov</span><ul>
+<li class="ev ev--restored">Claude Fable 5.2 and Opus 5.5 get the stuck Linux ports moving; all six Berkeley versions are ported in a week. Rog-O-Matic plays again, with a runner for unattended games. PC Rogue is next.</li>
+</ul></li>
+</ol>
 
 ## Where they were found
 
@@ -188,7 +191,3 @@ Several versions exist only because someone kept a copy and sent it in.
 <li><strong>Robert D. Kindelberger</strong>: the Super-Rogue 9.0 source, in 2004.</li>
 <li><strong>Ken Arnold</strong>: the Rogue 5.4 source, released on SourceForge.</li>
 </ol>
-
-The project itself ran on SourceForge from 2000, then on its own Trac
-and Subversion server at rogue.rogueforge.net, and since 2026 on
-[GitHub](https://github.com/rogueforge).

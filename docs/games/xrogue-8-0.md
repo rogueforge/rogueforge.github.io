@@ -1,8 +1,8 @@
 ---
 short: XRogue 8.0
-year: 1989–92
+year: 1989–91
 machine: AT&T UNIX PC
-status: port
+status: soon
 summary: Robert Pietkivitch's continuation of Advanced Rogue 7.7, restored with him from 1996.
 origin: Source from Robert Pietkivitch, 1996
 verified: Restored (8.0.3); not yet rebuilt from a binary
@@ -16,7 +16,7 @@ repo: xrogue8.0
 
 ---
 
-XRogue was developed by **Robert Pietkivitch between 1989 and 1992 for the
+XRogue was developed by **Robert Pietkivitch between 1989 and 1991 for the
 AT&T UNIX PC**. It is based on Advanced Rogue 7.7.
 
 Robert provided me with the source code in 1996 and provided much
@@ -25,6 +25,10 @@ project. He worked with me to bring XRogue back to life. After the
 restoration of 8.0 was complete he made a series of enhancements in 2000
 for the next version. Unfortunately he never got a chance to send those
 changes before his untimely death in 2002.
+
+<div class="callout">
+<p>XRogue is next in line for Redux, and its new work is coming to GitHub soon.</p>
+</div>
 
 ## Downloads
 
@@ -38,3 +42,20 @@ changes before his untimely death in 2002.
 ## Repository
 
 <https://github.com/rogueforge/xrogue8.0>
+
+## Release history
+
+### December 11, 2005 — 8.0.3
+
+A native 32-bit Windows console port, with new binaries for DOS, Windows,
+Linux and AIX. Fairer score file, save file protections removed, and
+various bug fixes.
+
+### February 7, 2005 — 8.0.2
+
+A fresh build with current compilers on all current platforms.
+
+### May 2, 2000 — 8.0.1
+
+The first re-release of XRogue, subtitled *Expeditions into the Dungeons
+of Doom*.

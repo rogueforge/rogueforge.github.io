@@ -8,7 +8,7 @@ released: Version string dated 11 April 1982; binary 20 July 1982
 origin: 4.1BSD last tape, /usr/games/rogue (CSRG Archive, Disc 1)
 toolchain: 4.1BSD VAX C compiler
 verified: Byte-identical, 19 July 2026
-repo: rogue5.2-19820720-bsd4.1, rogue5.2
+repo: rogue5.2
 ---
 # Rogue 5.2
 
@@ -57,8 +57,46 @@ the final executable, which is probably how Rogue 5.2 was distributed.
   It came from the anonymous FTP site at `uxc.cso.uiuc.edu/games/rogue`,
   now gone, in the early 1990s, and is probably close to unmodified.
 
-## Repositories
+## Repository
 
-- <https://github.com/rogueforge/rogue5.2-19820720-bsd4.1>: the 2026
-  rebuild.
-- <https://github.com/rogueforge/rogue5.2>: the earlier restoration.
+<https://github.com/rogueforge/rogue5.2>, with a branch for each line of
+work:
+
+- `restored-bsd4.1-19820720`: the 2026 rebuild.
+- `linux`: the Linux port, with bug fixes.
+- `oldmaster`: the earlier restoration.
+
+## Release history
+
+Releases of the earlier restoration. Each has a [GitHub release](https://github.com/rogueforge/rogue5.2/releases)
+with its changelog, from the original [Rogue 5.2](https://github.com/rogueforge/rogue5.2/releases/tag/v5.2) source onward;
+5.2.1 was announced as 5.2-1.
+
+### September 5, 2008 — [5.2.3](https://github.com/rogueforge/rogue5.2/releases/tag/v5.2.3)
+
+Keypad support, a manual random seed for Rog-O-Matic, and a run of bug
+fixes, most of them from Peter Schauer: mimics, teleported monsters,
+dragon fire at a door, endless loops in wandering monsters and object
+placement, and more than one trap on a square.
+
+### August 30, 2006 — [5.2.2](https://github.com/rogueforge/rogue5.2/releases/tag/v5.2.2)
+
+A portable score file, shared portability helpers, and a Windows port.
+
+### March 13, 2005 — [5.2.1](https://github.com/rogueforge/rogue5.2/releases/tag/v5.2.1)
+
+Final patches in, and binaries posted.
+
+### March 9, 2005 — CVS update
+
+Save and restore tested and fixed; minor cosmetic fixes.
+
+### February 28, 2005 — beta
+
+A fully working beta checked into CVS.
+
+### February 13, 2005 — first re-release
+
+A straight port, as close to the original as possible. The main change is
+a save-game format that works on any system, in place of the original's
+raw memory dump.

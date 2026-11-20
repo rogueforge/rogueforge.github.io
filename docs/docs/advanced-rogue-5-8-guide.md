@@ -1,6 +1,6 @@
 ---
 title: Advanced Rogue 5.8: The Dungeons of Doom
-summary: The player's guide to Advanced Rogue 5.8, from AT&T Bell Laboratories: character classes, over 110 monsters, artifacts and quests.
+summary: Michael Morgan and Ken Dalka's guide to Advanced Rogue 5.8, from AT&T Bell Laboratories: character classes, over 110 monsters, artifacts and quests.
 ---
 # Advanced Rogue 5.8: The Dungeons of Doom
 

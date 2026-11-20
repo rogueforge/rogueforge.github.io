@@ -8,7 +8,7 @@ released: Version string dated 21 April 1981; 4.1BSD binary 11 October 1981
 origin: 4.1BSD (TUHS); 2.9BSD /usr/70/rogue and /usr/games/rogue (CSRG Archive, Disc 1)
 toolchain: 4.1BSD VAX C compiler; 2.9BSD PDP-11 C compiler
 verified: Byte-identical on the VAX and the PDP-11
-repo: rogue3.6-19811011-bsd41, rogue3.6
+repo: rogue3.6
 ---
 # Rogue 3.6
 
@@ -71,9 +71,44 @@ CSRG Archive, Disc 1, directory 2.9pucc:
 - **Rogue 3.6 CMU (Rog-O-Matic)**: [r36.tar.Z](http://rogue.rogueforge.net/files/rogue3.6/r36.tar.Z),
   17 March 1985.
 
-## Repositories
+## Repository
 
-- <https://github.com/rogueforge/rogue3.6-19811011-bsd41>: the 2026
-  rebuild of the 4.1BSD binary.
-- <https://github.com/rogueforge/rogue3.6>: the earlier restoration,
-  with its 3.6.x releases.
+<https://github.com/rogueforge/rogue3.6>, with a branch for each line of
+work:
+
+- `restored-bsd41-19811011`: the 2026 rebuild of the 4.1BSD binary.
+- `restored-bsd2.9ov-19830207`: the 2026 rebuild of the overlaid 2.9BSD
+  PDP-11 binary, with its messages in `roguestrings`.
+- `restored-bsd2.9-19830327`: the 2026 rebuild of the 2.9BSD PDP-11
+  binary `/usr/70/rogue`, byte for byte.
+- `linux`: the Linux port, with bug fixes.
+- `oldmaster`: the earlier restoration, with a branch for each of its
+  3.6.x releases.
+
+## Release history
+
+Releases of the earlier restoration. Each has a [GitHub release](https://github.com/rogueforge/rogue3.6/releases)
+with its changelog, from the original [Rogue 3.6](https://github.com/rogueforge/rogue3.6/releases/tag/v3.6) source onward.
+
+### January 6, 2015 — [3.6.5](https://github.com/rogueforge/rogue3.6/releases/tag/v3.6.5)
+
+An autoconf build, and updated portability and save-state code.
+
+### September 4, 2008 — [3.6.4](https://github.com/rogueforge/rogue3.6/releases/tag/v3.6.4)
+
+Fixes found by running Rog-O-Matic against it: a hang caused by the
+floating eye, an endless loop placing an item in a full room, and daemons
+not running while hasted. A manual random seed for testing.
+
+### August 27, 2006 — [3.6.3](https://github.com/rogueforge/rogue3.6/releases/tag/v3.6.3)
+
+Keypad support and native Windows console binaries. Cleaned-up save and
+score file formats, incompatible with earlier versions. Many bug fixes.
+
+### February 6, 2005 — [3.6.2](https://github.com/rogueforge/rogue3.6/releases/tag/v3.6.2)
+
+Support for Cygwin and SFU/Interix on Windows; code updated for gcc 3.
+
+### April 30, 2000 — [3.6.1](https://github.com/rogueforge/rogue3.6/releases/tag/v3.6.1)
+
+The first re-release of Rogue, and the project's first release.

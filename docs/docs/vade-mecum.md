@@ -1,6 +1,7 @@
 ---
 title: The Rogue's Vade-Mecum
-summary: A companion to A Guide to the Dungeons of Doom, for Rogue 3.4 to 5.4 and PC Rogue 1.48.
+summary: George Sicherman's companion to A Guide to the Dungeons of Doom.
+hide_summary: true
 ---
 # The Rogue's Vade-Mecum
 

@@ -4,18 +4,18 @@ year: 1981
 machine: PDP-11
 status: rebuilt
 summary: The earliest Rogue whose binary survives, from 2.8BSD for the PDP-11, and the first version rebuilt byte for byte.
-released: Version string dated 16 April 1981; linked 21 May 1981
+released: Version string dated 16 April 1981; built 21 May 1981
 origin: 2.8BSD, /usr/bin.v7/ucb/rogue (CSRG Archive, Disc 1)
 toolchain: 2.8BSD Ritchie C compiler and a pre-release 2.8BSD library
 verified: Byte-identical, 3 July 2026
-repo: rogue3.4-19810521-bsd28
+repo: rogue3.4
 ---
 # Rogue 3.4
 
 Rogue was written at UC Santa Cruz and UC Berkeley by Michael Toy and
 Glenn Wichman, with Ken Arnold. Version 3.4 is the oldest that survives
 as a program: a 70,364-byte PDP-11 executable on the 2.8BSD distribution,
-linked at 04:41 on the morning of 21 May 1981.
+built at 04:41 on the morning of 21 May 1981.
 
 ## The 2026 rebuild
 
@@ -42,5 +42,5 @@ Dungeons of Doom*, whose source was rebuilt the same way.
 
 ## Repository
 
-<https://github.com/rogueforge/rogue3.4-19810521-bsd28>, named for the
-date and system of the binary it reproduces.
+<https://github.com/rogueforge/rogue3.4>. The `restored` branch and the
+`19810521-bsd28` tag hold the rebuild of the 2.8BSD binary of 21 May 1981.

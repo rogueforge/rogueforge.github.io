@@ -38,7 +38,7 @@ source tree's. Copies of Rogue turn up in Berkeley's BSD distribution
 trees, preserved on the CSRG archive CD-ROMs and at The Unix Heritage
 Society:
 
-- Rogue 3.4 in 2.8BSD, linked on 21 May 1981 for the PDP-11.
+- Rogue 3.4 in 2.8BSD, built on 21 May 1981 for the PDP-11.
 - Rogue 3.6 in 4.1BSD for the VAX, and twice more in 2.9BSD for the
   PDP-11.
 - Rogue 4.22 in 4.1aBSD, March 1982.

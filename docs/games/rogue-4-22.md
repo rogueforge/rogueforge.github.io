@@ -8,7 +8,7 @@ released: Version string dated 9 February 1982; binary 13 March 1982
 origin: 4.1aBSD, /games/rogue (CSRG Archive, Disc 1)
 toolchain: 4.1BSD VAX C compiler with 4.1cBSD library variants
 verified: Byte-identical
-repo: rogue4.22-19820313-bsd41
+repo: rogue4.22
 ---
 # Rogue 4.22
 
@@ -31,4 +31,5 @@ messages.
 
 ## Repository
 
-<https://github.com/rogueforge/rogue4.22-19820313-bsd41>
+<https://github.com/rogueforge/rogue4.22>. The `restored` branch and the
+`19820313-bsd41` tag hold the rebuild of the 4.1BSD binary of 13 March 1982.

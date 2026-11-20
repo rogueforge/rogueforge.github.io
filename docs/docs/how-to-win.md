@@ -1,6 +1,7 @@
 ---
 title: How to Win at Rogue
 summary: Bart Wright's treatise on winning at Rogue, from a player who had won some thirty games.
+hide_summary: true
 ---
 # How to Win at Rogue
 
