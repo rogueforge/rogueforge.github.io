@@ -13,7 +13,8 @@ UltraRogue was developed by **Herb Chong between 1985 and 1986**. Mostly
 distributed in binary form; later an unofficial archive was commonly
 available (v1.0.3, 8/13/1986).
 
-UltraRogue is based on Rogue 3.6 and an early version of Advanced Rogue.
+UltraRogue is a fork of Advanced Rogue, probably version 2.0, taken in
+December 1984 (see below).
 Herb Chong provided the source code in 1992 and allowed it to be updated
 to compile on modern systems — the first restoration this project ever
 undertook. Updated to ANSI C; new code written to save and restore the
@@ -23,6 +24,33 @@ I picked it up again when the SourceForge project began in 2000.
 This is a **semi-active version** of Rogue rather than a pure restoration.
 Changes to gameplay and other cosmetic changes have occurred and will
 continue to occur.
+
+## Where it came from
+
+The oldest UltraRogue that survives, 1.02 Beta ("Dr. C and Ivan were here
+5/19/85"), shows that it grew from Advanced Rogue, not directly from
+Super-Rogue:
+
+- **Advanced Rogue's version stamps.** Its files carry exactly Advanced
+  Rogue 1.0's: 8.0 (Bell Labs) 12/16/82 on `daemon.c`, `list.c` and
+  `trader.c`, 7.0 (Indian Hill) 10/5/82 on `player.c`, 7.0 on `encumb.c`,
+  and the Berkeley 3.x files beneath. `list.c` is the same file, byte for
+  byte.
+- **Advanced Rogue's code.** It shares about four in five of its functions
+  with Advanced Rogue 1.0, against two in three with Super-Rogue 7.2, and
+  hundreds of the messages only Advanced Rogue has, against a few of
+  Super-Rogue's.
+- **Advanced Rogue's monsters.** It keeps every monster of Advanced Rogue
+  1.0's Monster Manual set and adds about 25 of its own (bears, beetles,
+  apes, Jubilex, Medusa …), taking almost nothing from Super-Rogue's list.
+
+It left the line after 1.0 (April 1983) but well before 5.x: of the 861
+messages and 68 functions that Advanced Rogue 5.8 (January 1985) has and
+1.0 lacks, UltraRogue 1.02 has 45 and 2. Its 1993 guide draws the line
+Rogue 3.6 → Advanced Rogue → "PreUltraRogue" (17 December 1984), and
+Herb Chong's change log begins "2.01 – Dec 17/84", which reads as his
+first change to an Advanced Rogue 2.0, a version in circulation by
+November 1984.
 
 ## Surviving versions
 

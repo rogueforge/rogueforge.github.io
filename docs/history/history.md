@@ -90,10 +90,10 @@ Each fork borrowed from the ones before it.
 </ul></li>
 <li><span class="t-year">1984</span><ul>
 <li class="ev ev--written">Advanced Rogue spreads through AT&amp;T: version 1.3 by the spring, then 2.0, and the <a href="../games/advanced-rogue-5-8/">5.x line</a> by the autumn. Michael Morgan and Ken Dalka are among its authors.</li>
-<li class="ev ev--written">17 December: Herb Chong's "PreUltraRogue", the start of UltraRogue as its own 1993 guide dates it.</li>
+<li class="ev ev--written">17 December: Herb Chong forks Advanced Rogue, probably 2.0, as "PreUltraRogue", the start of <a href="../games/ultrarogue-1-07/">UltraRogue</a>.</li>
 </ul></li>
 <li><span class="t-year">1985</span><ul>
-<li class="ev ev--written">Herb Chong's <a href="../games/ultrarogue-1-07/">UltraRogue</a> 0.00 is dated 15 January, from Rogue 3.6 and an early Advanced Rogue. 1.02 Beta follows ("Dr. C and Ivan were here 5/19/85").</li>
+<li class="ev ev--written">UltraRogue 0.00 is dated 15 January. 1.02 Beta follows ("Dr. C and Ivan were here 5/19/85").</li>
 </ul></li>
 <li><span class="t-year">1986</span><ul>
 <li class="ev ev--written">UltraRogue 1.0.3 is dated 13 August, and goes round mostly as a binary.</li>
