@@ -3,7 +3,7 @@ short: Advanced Rogue 1.0
 year: 1983
 machine: Unix
 status: port
-summary: The first Advanced Rogue, from Bell Labs in 1983, a fork of Super-Rogue's 1982 code.
+summary: The first Advanced Rogue, from Bell Labs in 1983, a fork of Super-Rogue 8.0 (December 1982).
 released: Version string dated 23 April 1983
 origin: Source copy with file dates of 4 December 1989
 verified: Ported to Linux; not yet rebuilt from a binary
@@ -15,8 +15,8 @@ The first Advanced Rogue, from **AT&T Bell Labs**. Its version string
 reads "1.0 (Bell Labs) 4/23/83", so it is two years older than Advanced
 Rogue 5.8 and three older than 7.7, the versions that circulated widely.
 
-Advanced Rogue began as a fork of Super-Rogue, taken from its 7.x and 8.0
-versions at Bell Labs in late 1982. Under it is Rogue 3.6: several files
+Advanced Rogue began as a fork of Super-Rogue 8.0, taken at Bell Labs in
+December 1982 or soon after. Under it is Rogue 3.6: several files
 still carry their Berkeley stamps from June 1981. The files that make it
 more than Rogue carry stamps of 7.0, from "Indian Hill" and "Bell Labs" in
 October 1982, and 8.0 from December 1982. They match Super-Rogue 9.0's own:
@@ -26,10 +26,22 @@ Super-Rogue added after the fork is missing. Advanced Rogue's encumbrance
 counts weight only, where Super-Rogue 9.0 also counts how much room a pack
 has, and it has none of 9.0's version stamps.
 
-No source for Super-Rogue 7 or 8 survives, so reading those stamps as
-Super-Rogue's rests on the match with 9.0. The character classes, in
+Super-Rogue 7.2 survives as well (in [Julian Onions's
+repository](https://github.com/JulianOnions/rogue-7.2), dated 28 October
+1982), and comparing it settles the point: the fork came after 7.2.
+Advanced Rogue 1.0 has things 7.2 lacks and 9.0 has: the three files
+stamped 8.0 (`daemon.c`, `list.c` and `trader.c`, 16 December 1982, which
+7.2 has at 7.0), maze levels ("You are surrounded by twisty passages!") and
+dipping things in a pool. It has none of 9.0's later additions, such as the
+item screens with weights and charges, or the graveyard tombstone.
+
+It is not a superset of Super-Rogue, though. Advanced Rogue replaced
+Super-Rogue's bestiary (the anhkheg, elasmosaurus, koppleganger and the
+rest, in both 7.2 and 9.0) with its own, taken from the *Dungeons &
+Dragons Monster Manual*, and dropped some of its items, such as the ring
+of agility and the scroll of annihilate monster. The character classes, in
 `player.c` stamped "7.0 (Indian Hill)", have no counterpart in Super-Rogue
-9.0, so Advanced Rogue may have begun as a locally changed copy of it.
+7.2 or 9.0, so Advanced Rogue may have begun as a locally changed copy.
 Already in 1.0 a player can be a fighter, magician, cleric or thief, and the
 dungeon has mazes, a trading post and over a hundred monsters.
 

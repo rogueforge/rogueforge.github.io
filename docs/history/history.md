@@ -84,7 +84,7 @@ Each fork borrowed from the ones before it.
 <li class="ev ev--written">28 October: Super-Rogue 7.2 is dated at Bell Labs. A copy survives, "essentially Super Rogue 7.0 as released from Bell Labs", with bug fixes and support for 4.2BSD and System III added later. It went from Hasler in Switzerland to Strathclyde in 1986 and on to Nottingham in 1987, and is now in <a href="https://github.com/JulianOnions/rogue-7.2">Julian Onions's repository</a>.</li>
 </ul></li>
 <li><span class="t-year">1983</span><ul>
-<li class="ev ev--written"><a href="../games/advanced-rogue-1-0/">Advanced Rogue 1.0</a> is dated 23 April at Bell Labs, a fork of Super-Rogue's late-1982 code.</li>
+<li class="ev ev--written"><a href="../games/advanced-rogue-1-0/">Advanced Rogue 1.0</a> is dated 23 April at Bell Labs, a fork of Super-Rogue 8.0 (16 December 1982), with its own Monster Manual bestiary and character classes.</li>
 <li class="ev ev--written">Super-Rogue 9.0, the last version, is worked on from about May 1983 to July 1984.</li>
 </ul></li>
 <li><span class="t-year">1984</span><ul>
