@@ -80,8 +80,8 @@ Each fork borrowed from the ones before it.
 
 <ol class="timeline">
 <li><span class="t-year">1982</span><ul>
-<li class="ev ev--written"><a href="../games/super-rogue-9-0/">Super-Rogue</a> grows out of Rogue 3.6 at AT&amp;T Bell Labs, with Robert Kindelberger as its public face.</li>
-<li class="ev ev--written">28 October: Super-Rogue 7.2 (<a href="https://github.com/JulianOnions/rogue-7.2">a copy survives</a>).</li>
+<li class="ev ev--written"><a href="../games/super-rogue-9-0/">Super-Rogue</a> grows out of Rogue 3.6 at AT&amp;T Bell Labs. Its earliest dated change, to the tombstone code, is from 17 February.</li>
+<li class="ev ev--written">22 October: Super-Rogue 7.0.</li>
 <li class="ev ev--written">16 December: Super-Rogue 8.0.</li>
 </ul></li>
 <li><span class="t-year">1983</span><ul>
