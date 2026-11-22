@@ -16,7 +16,8 @@ hide_summary: true
 By Michael L. Mauldin, Guy Jacobson, Andrew Appel and Leonard Hamey  
 Department of Computer Science, Carnegie Mellon University
 
-See also the [1983 technical report](rogomatic-report.md) and
+See also the [1983 technical report](rogomatic-report.md), the
+[1985 Scientific American column](rogomatic-sciam.md) and
 [Rog-O-Matic XIV](../games/rogomatic.md).
 
 ## Abstract

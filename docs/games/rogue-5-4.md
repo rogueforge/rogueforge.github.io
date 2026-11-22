@@ -27,7 +27,18 @@ were recovered.
 
 The source Ken Arnold published on SourceForge in 2002 was the starting
 point, and it is close, but it is not quite the game in the binary:
-in places it is an earlier state, nearer Rogue 5.3. The 1985 binary has
+in places it is an earlier state, nearer Rogue 5.3. That fits how it was
+saved. At the 2016 Roguelike Celebration Arnold told the story: "a few
+years ago somebody sent me a version of the Rogue source code, which has
+essentially vanished from the world. They stole it off of a backup system
+at UC San Francisco when I worked there, and it's up on SourceForge under
+the project Rogue. And it is just post-5.3, and it doesn't quite work, because
+they stole it in the middle of development."
+([video](https://www.youtube.com/watch?v=4IkrZkUV01I), at 29:47; [transcript](../talks/rogue-panel-2016.md).)
+Why it nearly vanished he had explained in 2012: unlike the rest of Berkeley's
+Unix, Rogue's source was held back "so that we could make some money", and
+"it's a decision I regret a lot" ([talk](../talks/arnold-talk-2012.md), at
+46:05). The 1985 binary has
 commands and routines that appear in no surviving source: `a` to repeat a command,
 `,` to pick something up, a mystery trap, and functions named
 `door_look()`, `replay()` and `reset_fight()`.

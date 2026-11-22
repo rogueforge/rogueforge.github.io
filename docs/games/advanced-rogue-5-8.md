@@ -1,23 +1,24 @@
 ---
 short: Advanced Rogue 5.8
-year: 1984–86
+year: 1985
 machine: Unix
 status: soon
-summary: The Bell Labs Advanced Rogue, built on Rogue 3.6 with ideas from Super-Rogue. Restored 2005–2006.
+summary: The Bell Labs Advanced Rogue, from a fork of Super-Rogue on Rogue 3.6. Restored 2005–2006.
 origin: Source found on the internet
 verified: Restored 2006 (5.8.2); not yet rebuilt from a binary
 ---
 # Advanced Rogue 5.8
 
 Advanced Rogue (through v7.7) was developed by a group of employees at
-**AT&T Bell Labs between 1984 and 1986**. Michael Morgan and Ken Dalka
+**AT&T Bell Labs between 1983 and 1986**. Michael Morgan and Ken Dalka
 appear to be among the semi-anonymous authors. AT&T distributed Advanced
 Rogue through the AT&T Toolchest for a time.
 
-Advanced Rogue 5.8 is based on the Rogue 3.6 source code with some
-additions from Super-Rogue. The source code was found floating on the
-internet. (A slightly enhanced version was also found — dubbed 5.8e — and
-is ported separately.)
+Advanced Rogue 5.8 descends from Advanced Rogue 1.0, which forked from
+Super-Rogue's 1982 code on top of Rogue 3.6. The source code was found floating on the
+internet. A variant with special rooms, shops and new items,
+[Advanced Rogue 5.8s](advanced-rogue-5-8s.md), was also found and is
+restored separately.
 
 ## Guide
 

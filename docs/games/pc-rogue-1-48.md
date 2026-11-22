@@ -20,6 +20,13 @@ Epyx took it on as publisher in 1984 and sold it from 1985. For
 many people it was the first Rogue they played: the PC's own
 line-drawing characters, a title screen, and copy protection.
 
+Before Epyx, A.I. Design boxed and sold the game itself, from Jon Lane's
+garage, paying for its own advertising, and barely broke even
+([Matt Chat](../talks/wichman-matt-chat-2014.md);
+[Craddock](../talks/craddock-making-of-rogue-2016.md)). With no curses on
+the PC, Lane wrote its screen and text routines afresh, which is the
+A.I. Design curses the source still carries.
+
 The source of version 1.48, dated 30 December 1985, survives in three
 copies. The oldest has its original 1984–85 file dates and K&R style; the
 other two are a reformatted copy and a modernised one, both made from it.
@@ -43,6 +50,14 @@ it "kestrel". The PC's earliest surviving build, a 1983 beta, already
 has the new monsters.
 
 So the two lines shared some of their work and not the rest.
+
+The authors explain the new monsters. Rogue's first monsters, and their
+strengths, were taken from the *Dungeons & Dragons* books; with a
+commercial version planned, Toy and Lane replaced the ones that belonged
+to TSR, the kobold and the xorn among them, with new ones such as the
+kestrel ([Craddock](../talks/craddock-making-of-rogue-2016.md);
+[Roguelike Radio](../talks/roguelike-radio-2012.md), at 34:21). Rogue
+5.2's kobold and xorn are 5.3's kestrel and xeroc.
 
 ## The DOS releases
 
@@ -85,7 +100,17 @@ A few other things show the company at work. The function that loads
 Epyx's title picture is called `epyx_yuck()`. And the tombstone prints
 its name and killer from two strings that start out as "Software Pirate"
 and "Copy Protection Mafia", and it seems the copy protection swaps
-them for your own name and killer on a genuine disk.
+them for your own name and killer on a genuine disk. Jon Lane described
+it to Edge in 2009: "The first release would randomly cause bit rot, but
+as I got a little more clever I just added code that increased the damage
+and strength of anything evil in the game. It would be a challenge to get
+past the third level, and the message on the headstone at the end would
+read '[Your name] was killed by the copy protection mafia'"
+([Edge](../talks/edge-making-of-rogue-2009.md)).
+
+If you don't give a name, the PC game calls you Rodney. "The Amulet of
+Yendor is simply Rodney spelled backwards," Lane told Edge, "and I guess
+that seemed funny even though Rodney was no one in particular."
 
 ## The 2026 port
 

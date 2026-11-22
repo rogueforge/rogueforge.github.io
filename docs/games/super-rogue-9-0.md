@@ -7,6 +7,7 @@ summary: Robert Kindelberger's expansion of Rogue 3.6 at Bell Labs, restored fro
 released: Circa May 1983 to July 1984
 origin: Source from Robert D. Kindelberger, 2004
 verified: Restored 2005; not yet rebuilt from a binary
+repo: srogue9.0
 ---
 # Super-Rogue 9.0
 
@@ -23,9 +24,30 @@ The restoration of this version requires the standard updates for using
 gcc / ANSI-style C compilers, fixes for some bugs inherited from Rogue 3.6,
 and new save/restore code.
 
+## Other surviving copies
+
+- **A 1985 build for the AT&T UNIX PC.** An install package for the UNIX
+  PC's office shell, "Rogue - Version 1.2 - 02/21/85", holds a 68000 binary
+  of 9.0 whose version line is "9.0 ( 5/ 7/83) [SC was here 2/85]": built
+  from the May 1983 state of 9.0, ported by S. Coffin, who asks in the
+  install script for bug reports. It adds Rogue to the UNIX PC's Toybox menu,
+  with Kindelberger's tutorial, dated 22 February 1985.
+- **Super-Rogue 7.2** (Bell Labs, 28 October 1982), an earlier version,
+  "essentially Super Rogue 7.0 as released from Bell Labs" with later fixes,
+  survives in [Julian Onions's repository](https://github.com/JulianOnions/rogue-7.2).
+  It reached him in 1987 from Strathclyde, which had it from Hasler in
+  Switzerland.
+
 ## Repository
 
-Not yet on GitHub. Development was formerly `http://rogue.rogueforge.net/viewvc/srogue/trunk`.
+<https://github.com/rogueforge/srogue9.0>, with a branch for each line of
+work:
+
+- `master`: where the port and bug fixes will go. For now it is the same
+  as `restored`.
+- `restored`: Robert D. Kindelberger's source of 9.0 (July 17, 1984), with
+  his February 1985 tutorial.
+- `oldmaster`: the earlier restoration and its 9.0-1 release.
 
 ## Release history
 

@@ -15,7 +15,8 @@ hide_summary: true
 
 By Michael Mauldin, Guy Jacobson, Andrew Appel and Leonard Hamey
 
-See also the [1984 conference paper](rogomatic-paper.md) and
+See also the [1984 conference paper](rogomatic-paper.md), the
+[1985 Scientific American column](rogomatic-sciam.md) and
 [Rog-O-Matic XIV](../games/rogomatic.md).
 
 ## Abstract

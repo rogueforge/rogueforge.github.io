@@ -10,12 +10,12 @@ verified: Restored 2006 (7.7.1); not yet rebuilt from a binary
 # Advanced Rogue 7.7
 
 Advanced Rogue through v7.7 was developed by a group of employees at
-**AT&T Bell Labs between 1984 and 1986**. Michael Morgan and Ken Dalka
+**AT&T Bell Labs between 1983 and 1986**. Michael Morgan and Ken Dalka
 appear to be among the semi-anonymous authors. AT&T distributed Advanced
 Rogue through the AT&T Toolchest for a time.
 
-Advanced Rogue 7.7 is based on the Rogue 3.6 source code with some
-additions from Super-Rogue. The source code was found floating on the
+Advanced Rogue 7.7 descends from Advanced Rogue 1.0, which forked from
+Super-Rogue's 1982 code on top of Rogue 3.6. The source code was found floating on the
 internet.
 
 ## Guide

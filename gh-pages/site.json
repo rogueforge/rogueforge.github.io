@@ -29,7 +29,7 @@
       "slug": "games",
       "title": "Every version",
       "nav_label": "Versions",
-      "summary": "Six versions of Rogue were rebuilt from their original binaries in 2026, and PC Rogue, Super-Rogue, Advanced Rogue and UltraRogue are coming soon. The rest are restorations from their authors' source, made between 1992 and 2006, and still waiting for the same treatment.",
+      "summary": "Six versions of Rogue were rebuilt from their original binaries in 2026, and PC Rogue, Super-Rogue, the later Advanced Rogues and UltraRogue are coming soon. The rest are restorations from their authors' source, made between 1992 and 2006, and still waiting for the same treatment.",
       "families": [
         {
           "label": "Rogue at Berkeley",
@@ -76,18 +76,41 @@
       "slug": "docs",
       "title": "Guides",
       "nav_label": "Guides",
-      "summary": "How to play: the original manual, two companions to it, the guides to Advanced Rogue and XRogue, and the Rog-O-Matic papers.",
+      "summary": "How to play: the original manual, two companions to it, the Wheaton College hints, the guides to Advanced Rogue and XRogue, and the Rog-O-Matic papers and Scientific American column.",
       "order": [
         "dungeons-of-doom",
         "vade-mecum",
         "how-to-win",
+        "wheaton-guide",
         "advanced-rogue-5-8-guide",
         "advanced-rogue-7-7-guide",
         "xrogue-guide",
         "rogomatic-paper",
-        "rogomatic-report"
+        "rogomatic-report",
+        "rogomatic-sciam"
       ],
       "intro_md": "As the Archmage Yendor, I am far too busy to write an extensive guide, or indeed to write anything at all. Still, to spare myself the pleas for help from the many fools who would brave the Dungeons of Doom, I have gathered here what little information has been made available to the general populace. I confess the inaccuracies make me chuckle, but watching you suffer through them will afford me some small entertainment, and I shall observe your feeble attempts with amusement, as time permits. Should you escape with anything of interest, do stop by; I may spare you a few minutes.\n\n*The Archmage Yendor*"
+    },
+    {
+      "slug": "talks",
+      "title": "Talks",
+      "nav_label": "Talks",
+      "summary": "Rogue's creators in their own words, from 1984 to 2024: Glenn Wichman's own accounts, interviews written and recorded, a talk, a podcast and a panel, with Edge's and David L. Craddock's histories of the game's making.",
+      "order": [
+        "wichman-usenet-1984",
+        "wichman-history-1997",
+        "wichman-roguetemple-2007",
+        "edge-making-of-rogue-2009",
+        "roguelike-radio-2012",
+        "arnold-talk-2012",
+        "wichman-matt-chat-2014",
+        "craddock-making-of-rogue-2016",
+        "wichman-slashie-2016",
+        "rogue-panel-2016",
+        "wichman-gamereactor-2020",
+        "wichman-interview-2021",
+        "wichman-spillhistorie-2024"
+      ]
     },
     {
       "slug": "history",
@@ -96,6 +119,16 @@
       "summary": "Forty-five years of Rogue, from a game written at Santa Cruz in 1980 to the rebuilds of 2026, and how the versions are related.",
       "order": [
         "history"
+      ],
+      "single": true
+    },
+    {
+      "slug": "links",
+      "title": "Other Rogue resources",
+      "nav_label": "Links",
+      "summary": "Other places to play, read about and study Rogue.",
+      "order": [
+        "links"
       ],
       "single": true
     }
@@ -228,25 +261,37 @@
         },
         {
           "id": "srog",
-          "x": 2,
+          "x": 1,
           "y": 6,
-          "w": 15,
+          "w": 17,
           "h": 5,
           "label": "Super-Rogue",
-          "sub": "1982-84",
+          "sub": "1982-85",
           "href": "games/super-rogue-9-0",
           "soon": true,
           "step": 15,
           "sticker": "Coming soon"
         },
         {
-          "id": "ar58",
+          "id": "ar10",
           "x": 21,
           "y": 6,
           "w": 17,
           "h": 5,
+          "label": "Adv. Rogue 1.0",
+          "sub": "1983",
+          "href": "games/advanced-rogue-1-0",
+          "step": 19,
+          "lit": true
+        },
+        {
+          "id": "ar58",
+          "x": 21,
+          "y": 12,
+          "w": 17,
+          "h": 5,
           "label": "Adv. Rogue 5.8",
-          "sub": "1984-86",
+          "sub": "1985",
           "href": "games/advanced-rogue-5-8",
           "soon": true,
           "step": 16,
@@ -268,11 +313,11 @@
         {
           "id": "ar77",
           "x": 21,
-          "y": 12,
+          "y": 18,
           "w": 17,
           "h": 5,
           "label": "Adv. Rogue 7.7",
-          "sub": "1984-86",
+          "sub": "1986",
           "href": "games/advanced-rogue-7-7",
           "soon": true,
           "step": 18,
@@ -281,11 +326,11 @@
         {
           "id": "xrog",
           "x": 43,
-          "y": 12,
+          "y": 18,
           "w": 14,
           "h": 5,
           "label": "XRogue",
-          "sub": "1991",
+          "sub": "1989-91",
           "href": "games/xrogue-8-0",
           "lit": true,
           "step": 14
@@ -305,7 +350,7 @@
         },
         {
           "id": "rom",
-          "x": 32,
+          "x": 62,
           "y": 18,
           "w": 17,
           "h": 5,
@@ -426,27 +471,11 @@
         {
           "points": [
             [
-              29,
-              4
+              24,
+              10
             ],
             [
-              29,
-              6
-            ]
-          ]
-        },
-        {
-          "points": [
-            [
-              21,
-              8
-            ],
-            [
-              19,
-              8
-            ],
-            [
-              19,
+              24,
               11
             ],
             [
@@ -468,18 +497,6 @@
             [
               30,
               12
-            ]
-          ]
-        },
-        {
-          "points": [
-            [
-              37,
-              14
-            ],
-            [
-              43,
-              14
             ]
           ]
         },
@@ -515,6 +532,42 @@
             ]
           ],
           "shared": true
+        },
+        {
+          "points": [
+            [
+              30,
+              16
+            ],
+            [
+              30,
+              18
+            ]
+          ]
+        },
+        {
+          "points": [
+            [
+              37,
+              20
+            ],
+            [
+              43,
+              20
+            ]
+          ]
+        },
+        {
+          "points": [
+            [
+              17,
+              8
+            ],
+            [
+              21,
+              8
+            ]
+          ]
         }
       ]
     },

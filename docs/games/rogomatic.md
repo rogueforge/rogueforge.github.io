@@ -44,8 +44,29 @@ the strong players it was measured against.
   Technical Report CMU-CS-83-144, Carnegie-Mellon University, 1983.
 
 A. K. Dewdney wrote about it in *Scientific American*'s Computer
-Recreations column, February 1985: “An expert system outperforms mere
-mortals as it conquers the feared Dungeons of Doom”.
+Recreations column in February 1985:
+
+- [An expert system outperforms mere mortals as it conquers the feared Dungeons of Doom](../docs/rogomatic-sciam.md),
+  *Scientific American*, vol. 252, no. 2, February 1985, pp. 18–21.
+
+## Rog-O-Matic and Rogue's authors
+
+Rogue's authors knew about it. Ken Arnold made it his rule "that every
+release of Rogue would break Rog-O-Matic", with small quirks such as
+hallucination that made the game "more unpredictable and quirky without
+changing the gameplay" ([panel, 2016](../talks/rogue-panel-2016.md), at
+12:27; [video](https://www.youtube.com/watch?v=4IkrZkUV01I&t=747s)).
+
+## Total winners
+
+When Mauldin posted Rog-O-Matic XIV to net.sources in February 1985, he
+listed the versions of Rogue it had beaten, retrieving the Amulet of Yendor
+and coming back up alive:
+
+- Rogue 3.6, at Carnegie Mellon, on September 26, 1982.
+- Rogue 5.2, at the University of Waterloo, on October 10, 1983.
+- Rogue 5.3, at the University of Texas, on February 16, 1984. Some of the
+  changes made there by Dan Reynolds went into Rog-O-Matic XIV.
 
 ## The 2026 restoration
 
