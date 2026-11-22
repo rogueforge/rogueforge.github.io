@@ -80,12 +80,13 @@ Each fork borrowed from the ones before it.
 
 <ol class="timeline">
 <li><span class="t-year">1982</span><ul>
-<li class="ev ev--written"><a href="../games/super-rogue-9-0/">Super-Rogue</a> grows out of Rogue 3.6 at AT&amp;T Bell Labs, with Robert Kindelberger as the public face of the group. Versions 6.5, 7.2, 8.0 and 8.3 go round among friends.</li>
-<li class="ev ev--written">28 October: Super-Rogue 7.2 is dated at Bell Labs. A copy survives, "essentially Super Rogue 7.0 as released from Bell Labs", with bug fixes and support for 4.2BSD and System III added later. It went from Hasler in Switzerland to Strathclyde in 1986 and on to Nottingham in 1987, and is now in <a href="https://github.com/JulianOnions/rogue-7.2">Julian Onions's repository</a>.</li>
+<li class="ev ev--written"><a href="../games/super-rogue-9-0/">Super-Rogue</a> grows out of Rogue 3.6 at AT&amp;T Bell Labs, with Robert Kindelberger as its public face.</li>
+<li class="ev ev--written">28 October: Super-Rogue 7.2 (<a href="https://github.com/JulianOnions/rogue-7.2">a copy survives</a>).</li>
+<li class="ev ev--written">16 December: Super-Rogue 8.0.</li>
 </ul></li>
 <li><span class="t-year">1983</span><ul>
-<li class="ev ev--written"><a href="../games/advanced-rogue-1-0/">Advanced Rogue 1.0</a> is dated 23 April at Bell Labs, a fork of Super-Rogue 8.0 (16 December 1982), with its own Monster Manual bestiary and character classes.</li>
-<li class="ev ev--written">Super-Rogue 9.0, the last version, is worked on from about May 1983 to July 1984.</li>
+<li class="ev ev--written">23 April: <a href="../games/advanced-rogue-1-0/">Advanced Rogue 1.0</a>, forked from Super-Rogue 8.0.</li>
+<li class="ev ev--written">7 May: Super-Rogue 9.0, the last version, worked on until July 1984.</li>
 </ul></li>
 <li><span class="t-year">1984</span><ul>
 <li class="ev ev--written">Advanced Rogue spreads through AT&amp;T: version 1.3 by the spring, then 2.0, and the <a href="../games/advanced-rogue-5-8/">5.x line</a> by the autumn. Michael Morgan and Ken Dalka are among its authors.</li>
