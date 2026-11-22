@@ -28,10 +28,11 @@ them shared a stage at the 2016 Roguelike Celebration
 <li class="ev ev--written">In the fall, Michael Toy and Glenn Wichman write the first Rogue at UC Santa Cruz, in the apartment they share, on the campus PDP-11/70 and with Ken Arnold's curses library; Wichman names it. It is the most popular game on campus before it even has monsters (<a href="../talks/wichman-usenet-1984/">Wichman, 1984</a>), and goes through a series of early versions.</li>
 </ul></li>
 <li><span class="t-year">1981</span><ul>
-<li class="ev ev--written">In the winter of 1980–81 Michael Toy moves to UC Berkeley, and Ken Arnold, whose curses Rogue is built on, seeks him out and joins the team. Wichman keeps his own copy going at Santa Cruz for a while (<a href="../talks/wichman-history-1997/">Wichman, 1997</a>).</li>
+<li class="ev ev--written">In January 1981 Michael Toy moves to UC Berkeley, and Ken Arnold, whose curses Rogue is built on, seeks him out and joins the team. Wichman keeps his own copy going at Santa Cruz for a while (<a href="../talks/wichman-history-1997/">Wichman, 1997</a>).</li>
 <li class="ev ev--written">A Rogue binary reaches Bell Labs, where it is played as "UBL", for "Under Bell Labs" (<a href="https://www.youtube.com/watch?v=4IkrZkUV01I&amp;t=1177s">Toy, 2016</a>).</li>
 <li class="ev ev--written"><a href="../games/rogue-3-4/">Rogue 3.4</a> is built for the PDP-11 on 21 May and turns up in 2.8BSD: the earliest version that survives with a number and a date.</li>
 <li class="ev ev--written"><a href="../games/rogue-3-6/">Rogue 3.6</a> goes out with 4.1BSD for the VAX, and later 2.9BSD for the PDP-11. Copies spread to sites everywhere.</li>
+<li class="ev ev--written">In the fall Michael Toy moves to Italy to work for Olivetti, and goes on working on Rogue from there.</li>
 <li class="ev ev--written">At Carnegie Mellon, Andrew Appel, Leonard Hamey, Guy Jacobson and Michael Mauldin begin <a href="../games/rogomatic/">Rog-O-Matic</a>, a program that plays Rogue.</li>
 </ul></li>
 <li><span class="t-year">1982</span><ul>
@@ -40,6 +41,7 @@ them shared a stage at the 2016 Roguelike Celebration
 <li class="ev ev--written">26 September: <a href="../games/rogomatic/">Rog-O-Matic</a> becomes a total winner for the first time, at Rogue 3.6 at Carnegie Mellon.</li>
 </ul></li>
 <li><span class="t-year">1983</span><ul>
+<li class="ev ev--written">In January Michael Toy comes back from Italy.</li>
 <li class="ev ev--written">Michael Toy and Jon Lane, who met at Olivetti, found A.I. Design in Santa Clara, and Lane and Mel Sibony adapt Rogue for the IBM PC. A.I. Design publishes <a href="../games/pc-rogue-1-48/">PC Rogue</a>, grown from Rogue 5.2, with a new set of monsters in place of those taken from Dungeons &amp; Dragons, to keep clear of TSR (<a href="../talks/craddock-making-of-rogue-2016/">Craddock</a>). At first they box and sell it themselves, from Lane's garage, and barely break even.</li>
 <li class="ev ev--written"><a href="../games/rogue-5-3/">Rogue 5.3</a> in August, found in 4.2BSD, with the same new monsters.</li>
 <li class="ev ev--written">10 October: Rog-O-Matic wins at Rogue 5.2, at the University of Waterloo.</li>
